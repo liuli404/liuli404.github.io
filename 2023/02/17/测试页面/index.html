@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-bounce.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
 
 
@@ -80,7 +80,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -173,6 +173,7 @@
 <div class="post-block">
   
   
+ 
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/2023/02/17/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">
@@ -280,13 +281,13 @@
 </tr>
 </tbody></table>
 <h1 id="二、环境初始化"><a href="#二、环境初始化" class="headerlink" title="二、环境初始化"></a>二、环境初始化</h1><p>服务器配置</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">系统：CentOS <span class="token number">7.6</span>.1810 
+<pre class="language-bash" data-language="bash"><code class="language-bash">系统：CentOS <span class="token number">7.6</span>.1810 
 IP：10.11.109.201
 CPU：8线程
 内存：16G
-硬盘：200G<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+硬盘：200G</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 关闭防火墙、Selinux</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 关闭防火墙、Selinux</span>
 systemctl stop firewalld.service <span class="token operator">&amp;&amp;</span> systemctl disable firewalld.service
 systemctl stop NetworkManager <span class="token operator">&amp;&amp;</span> systemctl disable NetworkManager
 setenforce <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/enforcing/disabled/g'</span> /etc/selinux/config
@@ -333,9 +334,9 @@ net.core.wmem_max = 16777216
 net.ipv4.tcp_tw_recycle = 1
 vm.max_map_count = 655360
 EOF</span>
-<span class="token function">sysctl</span> <span class="token parameter variable">-p</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">sysctl</span> <span class="token parameter variable">-p</span></code></pre>
 
-<h1 id="三、软件安装"><a href="#三、软件安装" class="headerlink" title="三、软件安装"></a>三、软件安装</h1><h2 id="编译环境"><a href="#编译环境" class="headerlink" title="编译环境"></a>编译环境</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token punctuation">\</span>
+<h1 id="三、软件安装"><a href="#三、软件安装" class="headerlink" title="三、软件安装"></a>三、软件安装</h1><h2 id="编译环境"><a href="#编译环境" class="headerlink" title="编译环境"></a>编译环境</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token punctuation">\</span>
   openssl-devel <span class="token punctuation">\</span>
   expat-devel <span class="token punctuation">\</span>
   zlib-devel <span class="token punctuation">\</span>
@@ -350,21 +351,21 @@ EOF</span>
   libcurl-devel <span class="token punctuation">\</span>
   libzip-devel <span class="token punctuation">\</span>
   freetype-devel <span class="token punctuation">\</span>
-  cmake <span class="token function">make</span> gcc gcc-c++<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  cmake <span class="token function">make</span> gcc gcc-c++</code></pre>
 <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p><strong>卸载自带的 mariadb</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum remove <span class="token parameter variable">-y</span>  mariadb* <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> /etc/my.cnf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum remove <span class="token parameter variable">-y</span>  mariadb* <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> /etc/my.cnf</code></pre>
 
 <p><strong>创建 mysql 用户</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-s</span> /sbin/nologin mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">useradd</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-s</span> /sbin/nologin mysql</code></pre>
 
 <p><strong>解压源码包</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> mysql-boost-5.7.35.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> mysql-boost-5.7.35.tar.gz</code></pre>
 
 <p><strong>进入解压后的目录</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> mysql-5.7.35<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> mysql-5.7.35</code></pre>
 
 <p><strong>配置</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cmake <span class="token builtin class-name">.</span> <span class="token punctuation">\</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash">cmake <span class="token builtin class-name">.</span> <span class="token punctuation">\</span>
 <span class="token parameter variable">-DCMAKE_INSTALL_PREFIX</span><span class="token operator">=</span>/data/mysql <span class="token punctuation">\</span>
 <span class="token parameter variable">-DMYSQL_DATADIR</span><span class="token operator">=</span>/data/mysql/data <span class="token punctuation">\</span>
 <span class="token parameter variable">-DSYSCONFDIR</span><span class="token operator">=</span>/data/mysql <span class="token punctuation">\</span>
@@ -380,65 +381,65 @@ EOF</span>
 <span class="token parameter variable">-DDEFAULT_CHARSET</span><span class="token operator">=</span>utf8mb4 <span class="token punctuation">\</span>
 <span class="token parameter variable">-DDEFAULT_COLLATION</span><span class="token operator">=</span>utf8mb4_general_ci <span class="token punctuation">\</span>
 <span class="token parameter variable">-DWITH_SSL</span><span class="token operator">=</span>system <span class="token punctuation">\</span>
-<span class="token parameter variable">-DWITH_BOOST</span><span class="token operator">=</span>boost<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token parameter variable">-DWITH_BOOST</span><span class="token operator">=</span>boost</code></pre>
 
 <p><strong>编译安装</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token parameter variable">-j</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'processor'</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span><span class="token variable">`</span></span><span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token parameter variable">-j</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'processor'</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span><span class="token variable">`</span></span><span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
 
 <p><strong>创建 mysql-files 目录并设置 750 权限</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /data/mysql/mysql-files <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> <span class="token number">750</span> /data/mysql/mysql-files<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /data/mysql/mysql-files <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> <span class="token number">750</span> /data/mysql/mysql-files</code></pre>
 
 <p><strong>创建配置文件</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/mysql/my.cnf
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/mysql/my.cnf
 ---
 <span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
 <span class="token assign-left variable">port</span><span class="token operator">=</span><span class="token number">3306</span>
 <span class="token assign-left variable">basedir</span><span class="token operator">=</span>/data/mysql/
 <span class="token assign-left variable">datadir</span><span class="token operator">=</span>/data/mysql//data
-<span class="token assign-left variable">socket</span><span class="token operator">=</span>/data/mysql/mysql.sock<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token assign-left variable">socket</span><span class="token operator">=</span>/data/mysql/mysql.sock</code></pre>
 
 <p><strong>初始化数据库</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chown</span> <span class="token parameter variable">-R</span> mysql:mysql /data/mysql/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">chown</span> <span class="token parameter variable">-R</span> mysql:mysql /data/mysql/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /data/mysql
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /data/mysql
 <span class="token comment"># 这一步将获取 MySQL 初始密码</span>
-bin/mysqld --defaults-file<span class="token operator">=</span>/data/mysql/my.cnf <span class="token parameter variable">--initialize</span> <span class="token parameter variable">--user</span><span class="token operator">=</span>mysql <span class="token parameter variable">--basedir</span><span class="token operator">=</span>/data/mysql/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+bin/mysqld --defaults-file<span class="token operator">=</span>/data/mysql/my.cnf <span class="token parameter variable">--initialize</span> <span class="token parameter variable">--user</span><span class="token operator">=</span>mysql <span class="token parameter variable">--basedir</span><span class="token operator">=</span>/data/mysql/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/mysql_ssl_rsa_setup <span class="token parameter variable">--datadir</span><span class="token operator">=</span>/data/mysql/data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">bin/mysql_ssl_rsa_setup <span class="token parameter variable">--datadir</span><span class="token operator">=</span>/data/mysql/data</code></pre>
 
 <p><strong>启动 MySQL</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> support-files/mysql.server /etc/init.d/mysqld
-<span class="token function">chmod</span> +x /etc/init.d/mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> support-files/mysql.server /etc/init.d/mysqld
+<span class="token function">chmod</span> +x /etc/init.d/mysqld</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> mysqld start <span class="token operator">&amp;&amp;</span> <span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> mysqld<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> mysqld start <span class="token operator">&amp;&amp;</span> <span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> mysqld</code></pre>
 
 <p><strong>配置环境变量</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bashrc
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bashrc
 ---
 <span class="token comment"># mysql</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/data/mysql/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/data/mysql/bin/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
 
 <p>修改 root 密码及权限</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># mysql -u root -p</span>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># mysql -u root -p</span>
 Enter password: <span class="token comment"># 这里输入初始密码</span>
 mysql<span class="token operator">></span> <span class="token keyword">set</span> password <span class="token keyword">for</span> root<span class="token variable">@localhost</span> <span class="token operator">=</span> password<span class="token punctuation">(</span><span class="token string">'123456Aa.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 mysql<span class="token operator">></span> <span class="token keyword">grant</span> <span class="token keyword">all</span> <span class="token keyword">privileges</span> <span class="token keyword">on</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">to</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> identified <span class="token keyword">by</span> <span class="token string">'123456Aa.'</span><span class="token punctuation">;</span>
 mysql<span class="token operator">></span> flush <span class="token keyword">privileges</span><span class="token punctuation">;</span>
-mysql<span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> wordpress <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+mysql<span class="token operator">></span> <span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> wordpress <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARACTER</span> <span class="token keyword">SET</span> utf8 <span class="token keyword">COLLATE</span> utf8_general_ci<span class="token punctuation">;</span></code></pre>
 
 <h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p><strong>创建用户</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">useradd php -s &#x2F;sbin&#x2F;nologin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">useradd php -s &#x2F;sbin&#x2F;nologin</code></pre>
 
 <p><strong>解压安装包</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">tar -zxvf php-7.4.28.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">tar -zxvf php-7.4.28.tar.gz</code></pre>
 
 <p><strong>进入解压后的目录</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">cd php-7.4.28<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">cd php-7.4.28</code></pre>
 
 <p><strong>配置</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;configure \
+<pre class="language-none"><code class="language-none">.&#x2F;configure \
 --prefix&#x3D;&#x2F;data&#x2F;php \
 --with-config-file-path&#x3D;&#x2F;data&#x2F;php&#x2F;etc \
 --with-fpm-user&#x3D;php \
@@ -480,13 +481,13 @@ mysql<span class="token operator">></span> <span class="token keyword">CREATE</s
 --disable-rpath \
 --disable-fileinfo \
 --disable-ipv6 \
---disable-debug<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+--disable-debug</code></pre>
 
 <p><strong>编译安装</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">make -j &#96;cat &#x2F;proc&#x2F;cpuinfo | grep &#39;processor&#39; | wc -l&#96;&amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">make -j &#96;cat &#x2F;proc&#x2F;cpuinfo | grep &#39;processor&#39; | wc -l&#96;&amp;&amp; make install</code></pre>
 
 <p><strong>配置文件</strong></p>
-<pre class="line-numbers language-none"><code class="language-none"># php.ini
+<pre class="language-none"><code class="language-none"># php.ini
 cp php.ini-production &#x2F;data&#x2F;php&#x2F;etc&#x2F;php.ini
 vim &#x2F;data&#x2F;php&#x2F;etc&#x2F;php.ini
 ---
@@ -504,21 +505,21 @@ vim &#x2F;data&#x2F;php&#x2F;etc&#x2F;php-fpm.d&#x2F;www.conf
 pm.start_servers &#x3D; 10
 pm.min_spare_servers &#x3D; 5
 pm.max_spare_servers &#x3D; 35
-pm.max_children &#x3D; 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+pm.max_children &#x3D; 100</code></pre>
 
 <h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><p><strong>解压源码包</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> apr-1.7.0.tar.gz 
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> apr-1.7.0.tar.gz 
 <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> apr-util-1.6.1.tar.gz 
-<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> httpd-2.4.53.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> httpd-2.4.53.tar.gz</code></pre>
 
 <p><strong>进入解压后的目录</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> apr-1.7.0 httpd-2.4.53/srclib/apr
-<span class="token function">mv</span> apr-util-1.6.1 httpd-2.4.53/srclib/apr-util<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> apr-1.7.0 httpd-2.4.53/srclib/apr
+<span class="token function">mv</span> apr-util-1.6.1 httpd-2.4.53/srclib/apr-util</code></pre>
 
 <p><strong>配置</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> httpd-2.4.53/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> httpd-2.4.53/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./configure <span class="token punctuation">\</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash">./configure <span class="token punctuation">\</span>
 <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/data/httpd <span class="token punctuation">\</span>
 --enable-modules<span class="token operator">=</span>all <span class="token punctuation">\</span>
 --enable-mods-shared<span class="token operator">=</span>all <span class="token punctuation">\</span>
@@ -527,32 +528,32 @@ pm.max_children &#x3D; 100<span aria-hidden="true" class="line-numbers-rows"><sp
 --enable-rewrite <span class="token punctuation">\</span>
 --enable-ssl <span class="token punctuation">\</span>
 --enable-charset-lite <span class="token punctuation">\</span>
---with-pcre<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+--with-pcre</code></pre>
 
 <p><strong>编译安装</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token parameter variable">-j</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'processor'</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span><span class="token variable">`</span></span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token parameter variable">-j</span> <span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> /proc/cpuinfo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'processor'</span> <span class="token operator">|</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span><span class="token variable">`</span></span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
 
 <p><strong>配置环境变量</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bashrc
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.bashrc
 ---
 <span class="token comment"># httpd</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/data/httpd/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/data/httpd/bin/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
 
 <p><strong>设置启动文件</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/httpd/bin/apachectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/httpd/bin/apachectl</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 添加</span>
-<span class="token comment"># chkconfig: 35 85 21</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 添加</span>
+<span class="token comment"># chkconfig: 35 85 21</span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> /data/httpd/bin/apachectl /etc/init.d/httpd
-<span class="token function">chmod</span> +x /etc/init.d/httpd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> /data/httpd/bin/apachectl /etc/init.d/httpd
+<span class="token function">chmod</span> +x /etc/init.d/httpd</code></pre>
 
 <p><strong>修改配置文件</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> httpd/conf/httpd.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> httpd/conf/httpd.conf</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ServerName 设置为 localhost:80</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># ServerName 设置为 localhost:80</span>
 ServerName localhost:80
 
 
@@ -564,21 +565,21 @@ AddType application/x-httpd-php-source .phps
 DirectoryIndex index.html index.php
 
 <span class="token comment"># 载入 php7_module 模块</span>
-LoadModule php7_module modules/libphp7.so<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+LoadModule php7_module modules/libphp7.so</code></pre>
 
 <p><strong>启动服务</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> httpd start <span class="token operator">&amp;&amp;</span> <span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> httpd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> httpd start <span class="token operator">&amp;&amp;</span> <span class="token function">chkconfig</span> <span class="token parameter variable">--add</span> httpd</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/httpd/htdocs/test.php
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /data/httpd/htdocs/test.php
 
 <span class="token operator">&lt;</span>?php
     phpinfo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-?<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+?<span class="token operator">></span></code></pre>
 
 <p>访问测试页 <a target="_blank" rel="noopener" href="http://10.11.109.201/test.php%EF%BC%8C%E8%A7%A3%E6%9E%90%E5%87%BAphpinfo%E9%A1%B5%E9%9D%A2%E8%A1%A8%E7%A4%BA%E6%88%90%E5%8A%9F">http://10.11.109.201/test.php，解析出phpinfo页面表示成功</a></p>
 <p><img src="/2023/02/17/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/image-20230217141313610.png" alt="image-20230217141313610"></p>
 <h2 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h2><p><strong>解压安装包</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> wordpress-6.0-zh_CN.tar.gz <span class="token parameter variable">-C</span> /data/httpd/htdocs/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> wordpress-6.0-zh_CN.tar.gz <span class="token parameter variable">-C</span> /data/httpd/htdocs/</code></pre>
 
 <p>访问 <a target="_blank" rel="noopener" href="http://10.11.109.201/wordpress">http://10.11.109.201/wordpress</a></p>
 <p><img src="/2023/02/17/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/image-20230217141334409.png" alt="image-20230217141334409"></p>

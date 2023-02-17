@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-bounce.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
 
 
@@ -80,7 +80,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -173,6 +173,7 @@
 <div class="post-block">
   
   
+ 
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/2023/02/17/kafka/">
@@ -273,53 +274,53 @@
 </tr>
 </tbody></table>
 <p><img src="/2023/02/17/kafka/image-20220721175245734.png" alt="image-20220721175245734"></p>
-<h1 id="二、JDK-环境"><a href="#二、JDK-环境" class="headerlink" title="二、JDK 环境"></a>二、JDK 环境</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> jdk-8u321-linux-x64.tar.gz <span class="token parameter variable">-C</span> /opt
+<h1 id="二、JDK-环境"><a href="#二、JDK-环境" class="headerlink" title="二、JDK 环境"></a>二、JDK 环境</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> jdk-8u321-linux-x64.tar.gz <span class="token parameter variable">-C</span> /opt
 <span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$PATH</span>:/opt/jdk1.8.0_321/bin"</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># java -version</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># java -version</span>
 <span class="token function">java</span> version <span class="token string">"1.8.0_321"</span>
 Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment <span class="token punctuation">(</span>build <span class="token number">1.8</span>.0_321-b07<span class="token punctuation">)</span>
-Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> <span class="token number">64</span>-Bit Server VM <span class="token punctuation">(</span>build <span class="token number">25.321</span>-b07, mixed mode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> <span class="token number">64</span>-Bit Server VM <span class="token punctuation">(</span>build <span class="token number">25.321</span>-b07, mixed mode<span class="token punctuation">)</span></code></pre>
 
-<h1 id="三、Zookeeper-集群"><a href="#三、Zookeeper-集群" class="headerlink" title="三、Zookeeper 集群"></a>三、Zookeeper 集群</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> apache-zookeeper-3.7.1-bin.tar.gz <span class="token parameter variable">-C</span> /opt
-<span class="token builtin class-name">cd</span> /opt/apache-zookeeper-3.7.1-bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="三、Zookeeper-集群"><a href="#三、Zookeeper-集群" class="headerlink" title="三、Zookeeper 集群"></a>三、Zookeeper 集群</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> apache-zookeeper-3.7.1-bin.tar.gz <span class="token parameter variable">-C</span> /opt
+<span class="token builtin class-name">cd</span> /opt/apache-zookeeper-3.7.1-bin/</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> dataLog data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> dataLog data</code></pre>
 
 <p>注意 myid 内的数字不能重复，作为 zookeeper 的独立标志</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 身份标识，区别其他 zookeeper</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 身份标识，区别其他 zookeeper</span>
 <span class="token builtin class-name">echo</span> <span class="token number">1</span> <span class="token operator">></span> data/myid
 <span class="token builtin class-name">echo</span> <span class="token number">2</span> <span class="token operator">></span> data/myid
-<span class="token builtin class-name">echo</span> <span class="token number">3</span> <span class="token operator">></span> data/myid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">echo</span> <span class="token number">3</span> <span class="token operator">></span> data/myid</code></pre>
 
 <p>修改配置文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> conf/zoo_sample.cfg conf/zoo.cfg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> conf/zoo_sample.cfg conf/zoo.cfg</code></pre>
 
 <p>修改内容</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">dataDir</span><span class="token operator">=</span>/opt/apache-zookeeper-3.7.1-bin/data/
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">dataDir</span><span class="token operator">=</span>/opt/apache-zookeeper-3.7.1-bin/data/
 <span class="token assign-left variable">dataLogDir</span><span class="token operator">=</span>/opt/apache-zookeeper-3.7.1-bin/dataLog/
 <span class="token assign-left variable">server.1</span><span class="token operator">=</span><span class="token number">10.11</span>.113.181:2888:3888
 <span class="token assign-left variable">server.2</span><span class="token operator">=</span><span class="token number">10.11</span>.113.182:2888:3888
-<span class="token assign-left variable">server.3</span><span class="token operator">=</span><span class="token number">10.11</span>.113.183:2888:3888<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token assign-left variable">server.3</span><span class="token operator">=</span><span class="token number">10.11</span>.113.183:2888:3888</code></pre>
 
 <p>添加环境变量</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$PATH</span>:/opt/apache-zookeeper-3.7.1-bin/bin"</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$PATH</span>:/opt/apache-zookeeper-3.7.1-bin/bin"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
 
 <p>启动 zookeeper</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">zkServer.sh start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">zkServer.sh start</code></pre>
 
 <p>查看状态</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">zkServer.sh status<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">zkServer.sh status</code></pre>
 
-<h1 id="四、Kafka-集群"><a href="#四、Kafka-集群" class="headerlink" title="四、Kafka 集群"></a>四、Kafka 集群</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> kafka_2.13-2.7.0.tgz <span class="token parameter variable">-C</span> /opt
-<span class="token builtin class-name">cd</span> /opt/kafka_2.13-2.7.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="四、Kafka-集群"><a href="#四、Kafka-集群" class="headerlink" title="四、Kafka 集群"></a>四、Kafka 集群</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> kafka_2.13-2.7.0.tgz <span class="token parameter variable">-C</span> /opt
+<span class="token builtin class-name">cd</span> /opt/kafka_2.13-2.7.0</code></pre>
 
 <p>编辑配置文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> config/server.properties<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> config/server.properties</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># kafka 身份标识，区别其他 kafka</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># kafka 身份标识，区别其他 kafka</span>
 <span class="token assign-left variable">broker.id</span><span class="token operator">=</span><span class="token number">1</span>
 <span class="token comment"># 当前主机 IP</span>
 <span class="token assign-left variable">listeners</span><span class="token operator">=</span>PLAINTEXT://10.11.113.181:9092
@@ -328,38 +329,38 @@ Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctua
 <span class="token comment"># 日志数据文件</span>
 <span class="token assign-left variable">log.dirs</span><span class="token operator">=</span>/opt/kafka_2.13-2.7.0/logs
 <span class="token comment"># zookeeper 集群地址</span>
-<span class="token assign-left variable">zookeeper.connect</span><span class="token operator">=</span><span class="token number">10.11</span>.113.181:2181,10.11.113.182:2181,10.11.113.183:2181<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token assign-left variable">zookeeper.connect</span><span class="token operator">=</span><span class="token number">10.11</span>.113.181:2181,10.11.113.182:2181,10.11.113.183:2181</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$PATH</span>:/opt/kafka_2.13-2.7.0/bin"</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token builtin class-name">source</span> ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"export PATH=<span class="token environment constant">$PATH</span>:/opt/kafka_2.13-2.7.0/bin"</span> <span class="token operator">>></span> ~/.bashrc
+<span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
 
 <p>启动 kafka 集群</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/kafka-server-start.sh <span class="token parameter variable">-daemon</span> config/server.properties
-tailf logs/server.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">bin/kafka-server-start.sh <span class="token parameter variable">-daemon</span> config/server.properties
+tailf logs/server.log</code></pre>
 
 <p>查看进程含有 <code>QuorumPeerMain、Kafka</code></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># jps</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># jps</span>
 <span class="token number">3378</span> Jps
 <span class="token number">2726</span> QuorumPeerMain
-<span class="token number">3278</span> Kafka<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">3278</span> Kafka</code></pre>
 
-<h1 id="五、Kafka-集群测试"><a href="#五、Kafka-集群测试" class="headerlink" title="五、Kafka 集群测试"></a>五、Kafka 集群测试</h1><h2 id="5-1-创建-topic"><a href="#5-1-创建-topic" class="headerlink" title="5.1 创建 topic"></a>5.1 创建 topic</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token punctuation">\</span>
+<h1 id="五、Kafka-集群测试"><a href="#五、Kafka-集群测试" class="headerlink" title="五、Kafka 集群测试"></a>五、Kafka 集群测试</h1><h2 id="5-1-创建-topic"><a href="#5-1-创建-topic" class="headerlink" title="5.1 创建 topic"></a>5.1 创建 topic</h2><pre class="language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token punctuation">\</span>
   <span class="token parameter variable">--create</span> <span class="token punctuation">\</span>
   <span class="token parameter variable">--topic</span> my-test-topic <span class="token punctuation">\</span>
   --replication-factor <span class="token number">2</span> <span class="token punctuation">\</span>
-  <span class="token parameter variable">--partitions</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token parameter variable">--partitions</span> <span class="token number">1</span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 参数解释</span>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 参数解释</span>
 --topic: topic 名称
 --replication-factor: 副本数量
---partitions: 分区数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+--partitions: 分区数量</code></pre>
 
-<h2 id="5-2-查看当-topic-列表"><a href="#5-2-查看当-topic-列表" class="headerlink" title="5.2 查看当 topic 列表"></a>5.2 查看当 topic 列表</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--list</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="5-2-查看当-topic-列表"><a href="#5-2-查看当-topic-列表" class="headerlink" title="5.2 查看当 topic 列表"></a>5.2 查看当 topic 列表</h2><pre class="language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--list</span></code></pre>
 
-<h2 id="5-3-查看-topic-详细信息"><a href="#5-3-查看-topic-详细信息" class="headerlink" title="5.3 查看 topic 详细信息"></a>5.3 查看 topic 详细信息</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--describe</span> <span class="token parameter variable">--topic</span> my-test-topic<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="5-3-查看-topic-详细信息"><a href="#5-3-查看-topic-详细信息" class="headerlink" title="5.3 查看 topic 详细信息"></a>5.3 查看 topic 详细信息</h2><pre class="language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--describe</span> <span class="token parameter variable">--topic</span> my-test-topic</code></pre>
 
 <h2 id="5-4-消息生产者"><a href="#5-4-消息生产者" class="headerlink" title="5.4 消息生产者"></a>5.4 消息生产者</h2><p>运行一个消息生产者，指定 topic 为刚刚创建的 my-test-topic</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ bin/kafka-console-producer.sh --bootstrap-server <span class="token number">10.11</span>.113.181:9092 <span class="token parameter variable">--topic</span> my-test-topic
+<pre class="language-bash" data-language="bash"><code class="language-bash">$ bin/kafka-console-producer.sh --bootstrap-server <span class="token number">10.11</span>.113.181:9092 <span class="token parameter variable">--topic</span> my-test-topic
 <span class="token operator">></span><span class="token number">1</span>
 <span class="token operator">></span><span class="token number">2</span>
 <span class="token operator">></span><span class="token number">3</span>
@@ -368,12 +369,12 @@ tailf logs/server.log<span aria-hidden="true" class="line-numbers-rows"><span></
 <span class="token operator">></span><span class="token number">6</span>
 <span class="token operator">></span><span class="token number">7</span>
 <span class="token operator">></span><span class="token number">8</span>
-<span class="token operator">></span><span class="token number">9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">></span><span class="token number">9</span></code></pre>
 
 <h2 id="5-5-消息消费者"><a href="#5-5-消息消费者" class="headerlink" title="5.5 消息消费者"></a>5.5 消息消费者</h2><p>运行一个消息消费者，同样指定 topic 为 my-test-topic</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">--from-beginning: 从头开始接收消息<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">--from-beginning: 从头开始接收消息</code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ bin/kafka-console-consumer.sh --bootstrap-server <span class="token number">10.11</span>.113.181:9092 <span class="token parameter variable">--topic</span> my-test-topic --from-beginning
+<pre class="language-bash" data-language="bash"><code class="language-bash">$ bin/kafka-console-consumer.sh --bootstrap-server <span class="token number">10.11</span>.113.181:9092 <span class="token parameter variable">--topic</span> my-test-topic --from-beginning
 <span class="token number">1</span>
 <span class="token number">2</span>
 <span class="token number">3</span>
@@ -382,9 +383,9 @@ tailf logs/server.log<span aria-hidden="true" class="line-numbers-rows"><span></
 <span class="token number">6</span>
 <span class="token number">7</span>
 <span class="token number">8</span>
-<span class="token number">9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">9</span></code></pre>
 
-<h2 id="5-6-删除-topic"><a href="#5-6-删除-topic" class="headerlink" title="5.6 删除 topic"></a>5.6 删除 topic</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--delete</span> <span class="token parameter variable">--topic</span> my-test-topic<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="5-6-删除-topic"><a href="#5-6-删除-topic" class="headerlink" title="5.6 删除 topic"></a>5.6 删除 topic</h2><pre class="language-bash" data-language="bash"><code class="language-bash">bin/kafka-topics.sh <span class="token parameter variable">--zookeeper</span> <span class="token number">10.11</span>.113.181:2181 <span class="token parameter variable">--delete</span> <span class="token parameter variable">--topic</span> my-test-topic</code></pre>
 
 <p>想要彻底删除 topic，需要一个参数处于启用状态： <code>delete.topic.enable = true</code></p>
 
