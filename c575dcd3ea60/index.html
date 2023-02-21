@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-bounce.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://blog.liuli.host/c575dcd3ea60/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/c575dcd3ea60/","path":"c575dcd3ea60/","title":"Windows 挂载 OSS 存储"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Windows 挂载 OSS 存储 | MaxWell's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">MaxWell's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人技术笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="nav-text">一、下载软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE-Rclone"><span class="nav-text">二、配置 Rclone</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">2.1 配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E9%85%8D%E7%BD%AE-OSS"><span class="nav-text">2.2 配置 OSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">2.3 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E6%8C%82%E8%BD%BD-OSS-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A3%81%E7%9B%98"><span class="nav-text">2.4 挂载 OSS 为本地磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98"><span class="nav-text">2.5 设置开机自启动挂载硬盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE-SyncToy%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-text">三、配置 SyncToy（可选）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%96%B0%E5%BB%BA%E5%90%8C%E6%AD%A5%E7%9B%98"><span class="nav-text">3.1 新建同步盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%90%8C%E6%AD%A5%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2 同步方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%AE%BE%E5%AE%9A%E4%BB%BB%E5%8A%A1%E5%90%8D"><span class="nav-text">3.3 设定任务名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E6%89%8B%E5%8A%A8%E5%90%8C%E6%AD%A5"><span class="nav-text">3.4 手动同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5"><span class="nav-text">3.5 自动同步</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="刘李"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">刘李</p>
+  <div class="site-description" itemprop="description">运维 / 容器 / 云原生</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23919765" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23919765" rel="noopener me" target="_blank"><i class="fab fa-bili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_39680564" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_39680564" rel="noopener me" target="_blank"><i class="fab fa-csdn fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuli404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuli404" rel="noopener me" target="_blank"><i class="fab fa-hub fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+ 
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/c575dcd3ea60/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="刘李">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaxWell's Blog">
+      <meta itemprop="description" content="运维 / 容器 / 云原生">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Windows 挂载 OSS 存储 | MaxWell's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows 挂载 OSS 存储
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-01 16:54:22" itemprop="dateCreated datePublished" datetime="2022-08-01T16:54:22+08:00">2022-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-21 17:04:20" itemprop="dateModified" datetime="2023-02-21T17:04:20+08:00">2023-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>最近想要一个网盘，以防止电脑上重要数据丢失，但是百度阿里这种云盘使用起来需要下载他们的客户端，使用起来略微麻烦，最好是类似一块 Windows 硬盘挂载到我的电脑上，打开就能用的那种。终于在网上找到一种方案，将对象存储挂载至电脑上，并且对象存储价格低廉，遂记录该方案的实现步骤。</p>
+<span id="more"></span>
+
+<h1 id="一、下载软件"><a href="#一、下载软件" class="headerlink" title="一、下载软件"></a>一、下载软件</h1><p>Winfsp：<a target="_blank" rel="noopener" href="https://winfsp.dev/rel/">https://winfsp.dev/rel/</a></p>
+<p>Rclone：<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">https://rclone.org/downloads/</a></p>
+<p>SyncToy：<a target="_blank" rel="noopener" href="https://www.majorgeeks.com/files/details/microsoft_synctoy_for_windows_xp.html">https://www.majorgeeks.com/files/details/microsoft_synctoy_for_windows_xp.html</a></p>
+<h1 id="二、配置-Rclone"><a href="#二、配置-Rclone" class="headerlink" title="二、配置 Rclone"></a>二、配置 Rclone</h1><h2 id="2-1-配置环境变量"><a href="#2-1-配置环境变量" class="headerlink" title="2.1 配置环境变量"></a>2.1 配置环境变量</h2><p>1、打开任意文件夹，并在左侧导航目录下找到<strong>此电脑</strong>，单击右键选择<strong>属性 &gt; 高级系统设置 &gt; 环境变量 &gt; 系统变量 &gt; Path</strong>，单击<strong>新建</strong>。</p>
+<p>2、在弹出的窗口中，填写 Rclone 解压后的路径（D:\rclone），单击<strong>确定</strong>。</p>
+<p><img src="/c575dcd3ea60/image-20220801002313643.png" alt="image-20220801002313643"></p>
+<h2 id="2-2-配置-OSS"><a href="#2-2-配置-OSS" class="headerlink" title="2.2 配置 OSS"></a>2.2 配置 OSS</h2><p>1、打开 Windows Powershell，输入<code>rclone --version</code> 命令，按 <strong>Enter</strong>，查看 Rclone 是否成功安装。</p>
+<p><img src="/c575dcd3ea60/image-20220801002400599.png" alt="image-20220801002400599"></p>
+<p>2、确认 Rclone 安装成功后，在 Windows Powershell 中，输入 <code>rclone config</code> 命令，按 <strong>Enter</strong>。</p>
+<p>3、输入 <strong>n</strong> ，按 <strong>Enter</strong>，新建一个 New remote。</p>
+<p>4、输入该磁盘的名称，例如 myoss，按 <strong>Enter</strong></p>
+<p><img src="/c575dcd3ea60/image-20220801002704051.png" alt="image-20220801002704051"></p>
+<p>5、在显示的选项中，选择包含 Alibaba 的选项，即输入<strong>5</strong>，按 <strong>Enter</strong>。</p>
+<p>6、在显示的选项中，选择包含 OSS 的选项，输入<strong>2</strong>，按 <strong>Enter</strong>。</p>
+<p>7、执行到 <code>env_auth&gt;</code> 时，按 Enter。</p>
+<p>8、执行到 <code>access_key_id&gt;</code>时，输入阿里云 OSS 的访问密钥 AccessKey ID，按 <strong>Enter</strong>。</p>
+<p>9、执行到 <code>secret_access_key&gt;</code> 时，输入阿里云 OSS 的访问密钥 AccessKey Secret，按 <strong>Enter</strong>。</p>
+<p>10、选择对应的存储的地域，按 <strong>Enter</strong>。</p>
+<p>11、选择权限类型，根据实际需求选择 private 或者 public-read。输入<strong>3</strong>，按 <strong>Enter</strong>。</p>
+<p>12、在显示的对象存储的存储类型中，您可根据实际需求选择以何种存储类型将文件上传到 OSS。</p>
+<ul>
+<li><p>Default 表示默认</p>
+</li>
+<li><p>Standard storage class 表示标准存储（STANDARD）</p>
+</li>
+<li><p>Infrequent access storage mode 表示低频存储（Standard_IA）</p>
+</li>
+<li><p>Archive storage mode 表示归档存储（ARCHIVE）</p>
+</li>
+</ul>
+<p>13、执行到 <code>Edit advanced config? (y/n)</code> 时，按 <strong>Enter</strong>。</p>
+<p>14、确认信息无误后，按 <strong>Enter</strong>。</p>
+<p>15、输入 <strong>q</strong>，完成配置。</p>
+<h2 id="2-3-修改配置文件"><a href="#2-3-修改配置文件" class="headerlink" title="2.3 修改配置文件"></a>2.3 修改配置文件</h2><p>以上步骤配置完成后，在 <code>C:\Users\用户名\.config\rclone</code> 文件夹下，即可看到一个名称为 rclone.conf 的文件，该文件为 rclone 的配置文件。如果您想要修改 rclone 的配置，可直接对其进行修改。</p>
+<h2 id="2-4-挂载-OSS-为本地磁盘"><a href="#2-4-挂载-OSS-为本地磁盘" class="headerlink" title="2.4 挂载 OSS 为本地磁盘"></a>2.4 挂载 OSS 为本地磁盘</h2><p>如果映射为本地磁盘，则执行命令如下：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">rclone <span class="token function">mount</span> myoss:/ O: --cache-dir D:<span class="token punctuation">\</span>temp --vfs-cache-mode writes --no-check-certificate</code></pre>
+
+<ul>
+<li>myoss：替换为用户自定义的磁盘名称。</li>
+<li>O：替换为您想要挂载后，硬盘的盘符名称即可，请不要与本地的 C、D、E 盘等重复。</li>
+<li>D:\temp 为本地缓存目录，可自行设置。</li>
+</ul>
+<p>当出现提示 “The service rclone has been started” 则说明挂载成功。</p>
+<h2 id="2-5-设置开机自启动挂载硬盘"><a href="#2-5-设置开机自启动挂载硬盘" class="headerlink" title="2.5 设置开机自启动挂载硬盘"></a>2.5 设置开机自启动挂载硬盘</h2><p>由于如上操作在电脑重启后，映射的磁盘将会消失，需要再次手工操作。因此，我们可以设置自启动装置，让服务器每次重启后都自动挂载磁盘。</p>
+<ol>
+<li><p>在 Rclone 安装目录 D:\rclone 下，分别新建 startup_rclone.vbs 和 startup_rclone.bat 文件。</p>
+</li>
+<li><p>在 startup_rclone.bat 中，写入如下挂载命令：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">rclone <span class="token function">mount</span> myoss:/ O: --cache-dir D:<span class="token punctuation">\</span>temp --vfs-cache-mode writes --no-check-certificate <span class="token operator">&amp;</span></code></pre>
+</li>
+<li><p>在 startup_rclone.vbs 中，写入如下代码：</p>
+<pre class="language-vbscript" data-language="vbscript"><code class="language-vbscript">Set Ws &#x3D; CreateObject(&quot;Wscript.Shell&quot;)
+Ws.Run &quot;cmd &#x2F;c D:\rclone\startup_rclone.bat&quot;,0</code></pre>
+</li>
+<li><p>将 startup_rclone.vbs 文件剪切到 <code>%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 文件夹下。</p>
+</li>
+<li><p>重启服务器。</p>
+</li>
+</ol>
+<h1 id="三、配置-SyncToy（可选）"><a href="#三、配置-SyncToy（可选）" class="headerlink" title="三、配置 SyncToy（可选）"></a>三、配置 SyncToy（可选）</h1><p>该工具可以实现两个目录中文件同步，但是经测试，文件同步比较耗时，而且使用的对象存储资源较多，费钱。</p>
+<h2 id="3-1-新建同步盘"><a href="#3-1-新建同步盘" class="headerlink" title="3.1 新建同步盘"></a>3.1 新建同步盘</h2><p>左边本地盘、右边 OSS 盘</p>
+<p><img src="/c575dcd3ea60/image-20220801145215001.png" alt="image-20220801145215001"></p>
+<h2 id="3-2-同步方式"><a href="#3-2-同步方式" class="headerlink" title="3.2 同步方式"></a>3.2 同步方式</h2><p>选择 echo，左边操作同步到右边</p>
+<p><img src="/c575dcd3ea60/image-20220801145248669.png" alt="image-20220801145248669"></p>
+<h2 id="3-3-设定任务名"><a href="#3-3-设定任务名" class="headerlink" title="3.3 设定任务名"></a>3.3 设定任务名</h2><p><img src="/c575dcd3ea60/image-20220801145343654.png" alt="image-20220801145343654"></p>
+<h2 id="3-4-手动同步"><a href="#3-4-手动同步" class="headerlink" title="3.4 手动同步"></a>3.4 手动同步</h2><p>点击 run 手动同步两个盘</p>
+<p><img src="/c575dcd3ea60/image-20220801145410013.png" alt="image-20220801145410013"></p>
+<h2 id="3-5-自动同步"><a href="#3-5-自动同步" class="headerlink" title="3.5 自动同步"></a>3.5 自动同步</h2><p>通过定时任务，自动执行同步任务</p>
+<p>任务栏搜索 “任务计划程序”，点击”创建基本任务”</p>
+<p><img src="/c575dcd3ea60/image-20220801145532471.png" alt="image-20220801145532471"></p>
+<p>设置名称</p>
+<p><img src="/c575dcd3ea60/image-20220801145704883.png" alt="image-20220801145704883"></p>
+<p>触发器</p>
+<p><img src="/c575dcd3ea60/image-20220801145718632.png" alt="image-20220801145718632"></p>
+<p>时间</p>
+<p><img src="/c575dcd3ea60/image-20220801145740933.png" alt="image-20220801145740933"></p>
+<p>操作</p>
+<p><img src="/c575dcd3ea60/image-20220801145749898.png" alt="image-20220801145749898"></p>
+<p>程序位置</p>
+<p><img src="/c575dcd3ea60/image-20220801164020060.png" alt="image-20220801164020060"></p>
+<p>完成</p>
+<p><img src="/c575dcd3ea60/image-20220801145840800.png" alt="image-20220801145840800"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OSS/" rel="tag"><i class="fa fa-tag"></i> OSS</a>
+              <a href="/tags/Rclone/" rel="tag"><i class="fa fa-tag"></i> Rclone</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/9d7397c37e98/" rel="next" title="Hexo 搭配 Github Page 搭建个人博客">
+                  Hexo 搭配 Github Page 搭建个人博客 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘李</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">3k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">10 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="100" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
