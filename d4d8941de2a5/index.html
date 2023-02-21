@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://blog.liuli.host/">
+<link rel="canonical" href="https://blog.liuli.host/d4d8941de2a5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/d4d8941de2a5/","path":"d4d8941de2a5/","title":"Linux 获取文件的创建时间"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>MaxWell's Blog</title>
+<title>Linux 获取文件的创建时间 | MaxWell's Blog</title>
   
 
 
@@ -64,7 +64,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">MaxWell's Blog</h1>
+      <p class="site-title">MaxWell's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">个人技术笔记</p>
@@ -118,7 +118,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -131,6 +131,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-Slave-err-%E7%9A%84-Inode-%E7%A0%81"><span class="nav-text">获取 Slave.err 的 Inode 码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%89%80%E5%9C%A8%E7%9A%84%E7%A3%81%E7%9B%98"><span class="nav-text">查看文件所在的磁盘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-debugfs-%E8%8E%B7%E5%8F%96-crtime-%E5%88%9B%E5%BB%BA%E6%97%B6%E9%97%B4"><span class="nav-text">使用 debugfs 获取 crtime 创建时间</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,9 +164,10 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
@@ -173,223 +175,7 @@
   
  
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/9d7397c37e98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="刘李">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MaxWell's Blog">
-      <meta itemprop="description" content="运维 / 容器 / 云原生">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | MaxWell's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/9d7397c37e98/" class="post-title-link" itemprop="url">Hexo 搭配 Github Page 搭建个人博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-20 20:25:57" itemprop="dateCreated datePublished" datetime="2023-02-20T20:25:57+08:00">2023-02-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 16:13:41" itemprop="dateModified" datetime="2023-02-21T16:13:41+08:00">2023-02-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>​      由于工作需要，一直会有写笔记的需求。尝试过购买服务器自建 WordPress 写文章，但由于服务器需要自己维护，太浪费金钱与精力。为了满足记笔记的需求，找到了 Github Page + Hexo 的方案，无需运维，搭建简单，可以轻松满足个人博客的需求。本文为记录整个方案的搭建过程。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/9d7397c37e98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
- 
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/c575dcd3ea60/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="刘李">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MaxWell's Blog">
-      <meta itemprop="description" content="运维 / 容器 / 云原生">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | MaxWell's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/c575dcd3ea60/" class="post-title-link" itemprop="url">Windows 挂载 OSS 存储</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-08-01 16:54:22" itemprop="dateCreated datePublished" datetime="2022-08-01T16:54:22+08:00">2022-08-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 17:04:20" itemprop="dateModified" datetime="2023-02-21T17:04:20+08:00">2023-02-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近想要一个网盘，以防止电脑上重要数据丢失，但是百度阿里这种云盘使用起来需要下载他们的客户端，使用起来略微麻烦，最好是类似一块 Windows 硬盘挂载到我的电脑上，打开就能用的那种。终于在网上找到一种方案，将对象存储挂载至电脑上，并且对象存储价格低廉，遂记录该方案的实现步骤。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/c575dcd3ea60/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
- 
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/d4d8941de2a5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -403,13 +189,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | MaxWell's Blog">
+      <meta itemprop="name" content="Linux 获取文件的创建时间 | MaxWell's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/d4d8941de2a5/" class="post-title-link" itemprop="url">Linux 获取文件的创建时间</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Linux 获取文件的创建时间
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -439,6 +225,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
     <span class="post-meta-break"></span>
     <span class="post-meta-item" title="本文字数">
       <span class="post-meta-item-icon">
@@ -463,7 +256,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="获取-Slave-err-的-Inode-码"><a href="#获取-Slave-err-的-Inode-码" class="headerlink" title="获取 Slave.err 的 Inode 码"></a>获取 Slave.err 的 Inode 码</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@python slavemonitor<span class="token punctuation">]</span><span class="token comment"># stat Slave.err </span>
+        <h1 id="获取-Slave-err-的-Inode-码"><a href="#获取-Slave-err-的-Inode-码" class="headerlink" title="获取 Slave.err 的 Inode 码"></a>获取 Slave.err 的 Inode 码</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@python slavemonitor<span class="token punctuation">]</span><span class="token comment"># stat Slave.err </span>
   File: ‘Slave.err’
   Size: <span class="token number">208806</span>    	Blocks: <span class="token number">416</span>        IO Block: <span class="token number">4096</span>   regular <span class="token function">file</span>
 Device: fd01h/64769d	Inode: <span class="token number">2097509</span>     Links: <span class="token number">1</span>
@@ -472,15 +265,35 @@ Access: <span class="token number">2022</span>-05-13 <span class="token number">
 Modify: <span class="token number">2022</span>-05-13 <span class="token number">10</span>:04:21.208423148 +0800
 Change: <span class="token number">2022</span>-05-13 <span class="token number">10</span>:04:21.208423148 +0800
  Birth: -</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/d4d8941de2a5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+
+<h1 id="查看文件所在的磁盘"><a href="#查看文件所在的磁盘" class="headerlink" title="查看文件所在的磁盘"></a>查看文件所在的磁盘</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@python slavemonitor<span class="token punctuation">]</span><span class="token comment"># df -h</span>
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        <span class="token number">1</span>.9G     <span class="token number">0</span>  <span class="token number">1</span>.9G   <span class="token number">0</span>% /dev
+tmpfs           <span class="token number">1</span>.9G     <span class="token number">0</span>  <span class="token number">1</span>.9G   <span class="token number">0</span>% /dev/shm
+tmpfs           <span class="token number">1</span>.9G  <span class="token number">8</span>.6M  <span class="token number">1</span>.9G   <span class="token number">1</span>% /run
+tmpfs           <span class="token number">1</span>.9G     <span class="token number">0</span>  <span class="token number">1</span>.9G   <span class="token number">0</span>% /sys/fs/cgroup
+/dev/vda1        40G   12G   26G  <span class="token number">31</span>% /
+tmpfs           379M     <span class="token number">0</span>  379M   <span class="token number">0</span>% /run/user/0</code></pre>
+
+<h1 id="使用-debugfs-获取-crtime-创建时间"><a href="#使用-debugfs-获取-crtime-创建时间" class="headerlink" title="使用 debugfs 获取 crtime 创建时间"></a>使用 debugfs 获取 crtime 创建时间</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@python slavemonitor<span class="token punctuation">]</span><span class="token comment"># debugfs -R 'stat &lt;2097509>' /dev/vda1 </span>
+debugfs <span class="token number">1.42</span>.9 <span class="token punctuation">(</span><span class="token number">28</span>-Dec-2013<span class="token punctuation">)</span>
+Inode: <span class="token number">2097509</span>   Type: regular    Mode:  0644   Flags: 0x80000
+Generation: <span class="token number">2270275877</span>    Version: 0x00000000:00000001
+User:     <span class="token number">0</span>   Group:     <span class="token number">0</span>   Size: <span class="token number">208806</span>
+File ACL: <span class="token number">0</span>    Directory ACL: <span class="token number">0</span>
+Links: <span class="token number">1</span>   Blockcount: <span class="token number">416</span>
+Fragment:  Address: <span class="token number">0</span>    Number: <span class="token number">0</span>    Size: <span class="token number">0</span>
+ ctime: 0x627dbca5:31b123b0 -- Fri May <span class="token number">13</span> <span class="token number">10</span>:04:21 <span class="token number">2022</span>
+ atime: 0x627dc278:8a4be43c -- Fri May <span class="token number">13</span> <span class="token number">10</span>:29:12 <span class="token number">2022</span>
+ mtime: 0x627dbca5:31b123b0 -- Fri May <span class="token number">13</span> <span class="token number">10</span>:04:21 <span class="token number">2022</span>
+crtime: 0x627a1b08:b91d4718 -- Tue May <span class="token number">10</span> <span class="token number">15</span>:58:00 <span class="token number">2022</span>
+Size of extra inode fields: <span class="token number">28</span>
+EXTENTS:
+<span class="token punctuation">(</span>ETB0<span class="token punctuation">)</span>:8451326, <span class="token punctuation">(</span><span class="token number">0</span>-1<span class="token punctuation">)</span>:8437754-8437755, <span class="token punctuation">(</span><span class="token number">2</span>-3<span class="token punctuation">)</span>:8449822-8449823, <span class="token punctuation">(</span><span class="token number">4</span>-5<span class="token punctuation">)</span>:8449982-8449983, <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>:8421389, <span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>:8451325, <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>:8451794, <span class="token punctuation">(</span><span class="token number">9</span>-10<span class="token punctuation">)</span>:8451798-8451799, <span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span>:8451803, <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>:8451807, <span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span>:8451811, <span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span>:8451815, <span class="token punctuation">(</span><span class="token number">15</span>-16<span class="token punctuation">)</span>:8451818-8451819, <span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span>:84
+<span class="token number">51823</span>, <span class="token punctuation">(</span><span class="token number">18</span>-19<span class="token punctuation">)</span>:8451829-8451830, <span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>:8450431, <span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">)</span>:8451207, <span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span>:8451809, <span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">)</span>:8451813, <span class="token punctuation">(</span><span class="token number">24</span>-25<span class="token punctuation">)</span>:8451834-8451835, <span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span>:8451841, <span class="token punctuation">(</span><span class="token number">27</span><span class="token punctuation">)</span>:8451847, <span class="token punctuation">(</span><span class="token number">28</span>-29<span class="token punctuation">)</span>:8451854-8451855, <span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span>:8451860, <span class="token punctuation">(</span><span class="token number">31</span>-32<span class="token punctuation">)</span>:8451866-8451867, <span class="token punctuation">(</span><span class="token number">33</span><span class="token punctuation">)</span>:8451873, <span class="token punctuation">(</span><span class="token number">34</span><span class="token punctuation">)</span>:8451879, <span class="token punctuation">(</span><span class="token number">35</span>
+-36<span class="token punctuation">)</span>:8451885-8451886, <span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span>:8451892, <span class="token punctuation">(</span><span class="token number">38</span>-39<span class="token punctuation">)</span>:8451898-8451899, <span class="token punctuation">(</span><span class="token number">40</span>-41<span class="token punctuation">)</span>:8451905-8451906, <span class="token punctuation">(</span><span class="token number">42</span>-43<span class="token punctuation">)</span>:8451912-8451913, <span class="token punctuation">(</span><span class="token number">44</span><span class="token punctuation">)</span>:8451919, <span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span>:8451925, <span class="token punctuation">(</span><span class="token number">46</span><span class="token punctuation">)</span>:8451931, <span class="token punctuation">(</span><span class="token number">47</span><span class="token punctuation">)</span>:8451937, <span class="token punctuation">(</span><span class="token number">48</span><span class="token punctuation">)</span>:8451943, <span class="token punctuation">(</span><span class="token number">49</span><span class="token punctuation">)</span>:8451949, <span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>:8451955</code></pre>
+
+
     </div>
 
     
@@ -488,11 +301,25 @@ Change: <span class="token number">2022</span>-05-13 <span class="token number">
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/c575dcd3ea60/" rel="next" title="Windows 挂载 OSS 存储">
+                  Windows 挂载 OSS 存储 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
