@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/purple/pace-theme-bounce.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.liuli.host","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://blog.liuli.host/611e19b2dbc6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/611e19b2dbc6/","path":"611e19b2dbc6/","title":"常用服务快速安装"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>常用服务快速安装 | MaxWell's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">MaxWell's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人技术笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">一、服务器环境初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="nav-text">1.1 设置主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%85%B3%E9%97%AD-Firewalld-%E4%B8%8E-Selinux"><span class="nav-text">1.2 关闭 Firewalld 与 Selinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-NTP-%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5"><span class="nav-text">1.3 NTP 时间同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E9%BD%90"><span class="nav-text">1.4 Bash 命令补齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E6%9C%80%E5%A4%A7%E6%96%87%E4%BB%B6%E6%95%B0%E4%B8%8E%E8%BF%9B%E7%A8%8B%E6%95%B0"><span class="nav-text">1.5 最大文件数与进程数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AE"><span class="nav-text">1.6 历史命令设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96"><span class="nav-text">1.7 内核参数优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E7%AC%A6"><span class="nav-text">1.8 系统设置中文字符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%85%8D%E7%BD%AE"><span class="nav-text">二、软件源配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-YUM-%E6%BA%90"><span class="nav-text">2.1 YUM 源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-PIP-%E6%BA%90"><span class="nav-text">2.2 PIP 源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-NPM-%E6%BA%90"><span class="nav-text">2.3 NPM 源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93"><span class="nav-text">2.4 Docker 镜像仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Helm-%E4%BB%93%E5%BA%93"><span class="nav-text">2.5 Helm 仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%BD%AF%E4%BB%B6%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85"><span class="nav-text">三、软件快速安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Docker"><span class="nav-text">3.1 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Docker-Compose"><span class="nav-text">3.2 Docker Compose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%AE%89%E8%A3%85-MySQL-5-7"><span class="nav-text">3.3 安装 MySQL 5.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%AE%89%E8%A3%85-LAMP"><span class="nav-text">3.4 安装 LAMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E5%AE%89%E8%A3%85-Node-js-%E7%8E%AF%E5%A2%83"><span class="nav-text">3.5 安装 Node.js 环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Nginx"><span class="nav-text">3.6 Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-Redis"><span class="nav-text">3.7 Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85-php5-6"><span class="nav-text">3.8 编译安装 php5.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-JDK-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">3.9 JDK 环境配置</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="刘李"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">刘李</p>
+  <div class="site-description" itemprop="description">运维 / 容器 / 云原生</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/23919765" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;23919765" rel="noopener me" target="_blank"><i class="fab fa-bili fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_39680564" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_39680564" rel="noopener me" target="_blank"><i class="fab fa-csdn fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuli404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuli404" rel="noopener me" target="_blank"><i class="fab fa-hub fa-fw"></i></a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+ 
+      <span class="post-meta-item-icon">
+      <i class="fa fa-thumb-tack"></i>
+      </span>
+      <font color=#555>Top</font>
+      <span class="post-meta-divider"></span>
+
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/611e19b2dbc6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="刘李">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaxWell's Blog">
+      <meta itemprop="description" content="运维 / 容器 / 云原生">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="常用服务快速安装 | MaxWell's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常用服务快速安装
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-11-21 17:19:03" itemprop="dateCreated datePublished" datetime="2022-11-21T17:19:03+08:00">2022-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-21 17:38:51" itemprop="dateModified" datetime="2023-02-21T17:38:51+08:00">2023-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一、服务器环境初始化"><a href="#一、服务器环境初始化" class="headerlink" title="一、服务器环境初始化"></a>一、服务器环境初始化</h1><h2 id="1-1-设置主机名"><a href="#1-1-设置主机名" class="headerlink" title="1.1 设置主机名"></a>1.1 设置主机名</h2><pre class="language-bash" data-language="bash"><code class="language-bash">hostnamectl set-hostname <span class="token operator">&lt;</span>hostname<span class="token operator">></span></code></pre>
+
+<h2 id="1-2-关闭-Firewalld-与-Selinux"><a href="#1-2-关闭-Firewalld-与-Selinux" class="headerlink" title="1.2 关闭 Firewalld 与 Selinux"></a>1.2 关闭 Firewalld 与 Selinux</h2><pre class="language-bash" data-language="bash"><code class="language-bash">systemctl stop firewalld.service <span class="token operator">&amp;&amp;</span> systemctl disable firewalld.service
+setenforce <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/enforcing/disabled/g'</span> /etc/selinux/config</code></pre>
+
+<h2 id="1-3-NTP-时间同步"><a href="#1-3-NTP-时间同步" class="headerlink" title="1.3 NTP 时间同步"></a>1.3 NTP 时间同步</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> ntp
+<span class="token function">cat</span> <span class="token operator">></span> /etc/ntp.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+driftfile /var/lib/ntp/drift
+restrict default nomodify notrap nopeer noquery
+restrict 127.0.0.1 
+restrict ::1
+server 0.cn.pool.ntp.org
+server 1.cn.pool.ntp.org
+server 2.cn.pool.ntp.org
+server 3.cn.pool.ntp.org
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+EOF</span>
+systemctl stop chronyd <span class="token operator">&amp;&amp;</span> systemctl disable chronyd
+systemctl start ntpd <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> ntpd
+ntpdate <span class="token parameter variable">-u</span> <span class="token number">0</span>.cn.pool.ntp.org
+hwclock <span class="token parameter variable">--systohc</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'0 * * * * /usr/sbin/ntpdate -u 0.cn.pool.ntp.org >> /tmp/autontpdate 2>&amp;1'</span>  <span class="token operator">>></span> /var/spool/cron/root</code></pre>
+
+<h2 id="1-4-Bash-命令补齐"><a href="#1-4-Bash-命令补齐" class="headerlink" title="1.4 Bash 命令补齐"></a>1.4 Bash 命令补齐</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> bash-completion
+<span class="token builtin class-name">source</span> /usr/share/bash-completion/bash_completion</code></pre>
+
+<h2 id="1-5-最大文件数与进程数"><a href="#1-5-最大文件数与进程数" class="headerlink" title="1.5 最大文件数与进程数"></a>1.5 最大文件数与进程数</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 打开文件数</span>
+<span class="token function">cat</span> <span class="token operator">>></span> /etc/security/limits.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+* soft nofile 102400
+* hard nofile 204800
+EOF</span>
+
+<span class="token comment"># 最大进程数</span>
+<span class="token function">cat</span> <span class="token operator">></span> /etc/security/limits.d/20-nproc.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+* soft nproc 102400
+* hard nproc 204800
+EOF</span></code></pre>
+
+<h2 id="1-6-历史命令设置"><a href="#1-6-历史命令设置" class="headerlink" title="1.6 历史命令设置"></a>1.6 历史命令设置</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token operator">!</span> <span class="token function">grep</span> <span class="token string">"HISTTIMEFORMAT"</span> /etc/profile <span class="token operator">&amp;></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'export HISTTIMEFORMAT="%F %T `whoami` "'</span> <span class="token operator">>></span> /etc/profile
+<span class="token builtin class-name">echo</span> <span class="token string">"export HISTSIZE=500"</span> <span class="token operator">>></span>/etc/profile
+<span class="token builtin class-name">echo</span> <span class="token string">"export HISTFILESIZE=500"</span> <span class="token operator">>></span> /etc/profile
+<span class="token keyword">fi</span>
+<span class="token builtin class-name">source</span> /etc/profile</code></pre>
+
+<h2 id="1-7-内核参数优化"><a href="#1-7-内核参数优化" class="headerlink" title="1.7 内核参数优化"></a>1.7 内核参数优化</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">>></span> /etc/sysctl.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.tcp_syncookies = 1
+kernel.msgmnb = 65536
+kernel.msgmax = 65536
+net.ipv4.tcp_max_tw_buckets = 6000
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_rmem = 4096 87380 4194304
+net.ipv4.tcp_wmem = 4096 16384 4194304
+net.core.wmem_default = 8388608
+net.core.rmem_default = 8388608
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_tw_recycle = 1
+vm.max_map_count = 655360
+EOF</span>
+<span class="token function">sysctl</span> <span class="token parameter variable">-p</span></code></pre>
+
+<h2 id="1-8-系统设置中文字符"><a href="#1-8-系统设置中文字符" class="headerlink" title="1.8 系统设置中文字符"></a>1.8 系统设置中文字符</h2><p>安装中文字符</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> kde-l10n-Chinese glibc-common </code></pre>
+<p>设置环境变量</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+export LC_ALL=zh_CN.utf8
+export LANG=zh_CN.utf8
+export LANGUAGE=zh_CN.utf8
+EOF</span>
+<span class="token punctuation">)</span> <span class="token operator">>></span> ~/.bashrc <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> localedef <span class="token parameter variable">-c</span> <span class="token parameter variable">-f</span> UTF-8 <span class="token parameter variable">-i</span> zh_CN zh_CN.utf8 <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">source</span> ~/.bashrc <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token environment constant">$LANG</span></code></pre>
+
+<h1 id="二、软件源配置"><a href="#二、软件源配置" class="headerlink" title="二、软件源配置"></a>二、软件源配置</h1><h2 id="2-1-YUM-源"><a href="#2-1-YUM-源" class="headerlink" title="2.1 YUM 源"></a>2.1 YUM 源</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mv</span> /etc/yum.repos.d/CentOS-* /tmp/
+<span class="token function">curl</span> <span class="token parameter variable">-o</span> /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+<span class="token function">curl</span> <span class="token parameter variable">-o</span> /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+yum clean all <span class="token operator">&amp;&amp;</span> yum makecache</code></pre>
+
+<h2 id="2-2-PIP-源"><a href="#2-2-PIP-源" class="headerlink" title="2.2 PIP 源"></a>2.2 PIP 源</h2><h2 id="2-3-NPM-源"><a href="#2-3-NPM-源" class="headerlink" title="2.3 NPM 源"></a>2.3 NPM 源</h2><h2 id="2-4-Docker-镜像仓库"><a href="#2-4-Docker-镜像仓库" class="headerlink" title="2.4 Docker 镜像仓库"></a>2.4 Docker 镜像仓库</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token parameter variable">-p</span>  /etc/docker/
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">'&#123;\n "registry-mirrors": ["https://1e7waog4.mirror.aliyuncs.com"]\n&#125;'</span> <span class="token operator">></span> /etc/docker/daemon.json
+systemctl daemon-reload <span class="token operator">&amp;&amp;</span> systemctl start <span class="token function">docker</span> <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> <span class="token function">docker</span></code></pre>
+
+<h2 id="2-5-Helm-仓库"><a href="#2-5-Helm-仓库" class="headerlink" title="2.5 Helm 仓库"></a>2.5 Helm 仓库</h2><h1 id="三、软件快速安装"><a href="#三、软件快速安装" class="headerlink" title="三、软件快速安装"></a>三、软件快速安装</h1><h2 id="3-1-Docker"><a href="#3-1-Docker" class="headerlink" title="3.1 Docker"></a>3.1 Docker</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+yum <span class="token parameter variable">-y</span> <span class="token function">install</span> docker-ce
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span>  /etc/docker/
+<span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">'&#123;\n "registry-mirrors": ["https://1e7waog4.mirror.aliyuncs.com"]\n&#125;'</span> <span class="token operator">></span> /etc/docker/daemon.json
+systemctl daemon-reload <span class="token operator">&amp;&amp;</span> systemctl start <span class="token function">docker</span> <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> <span class="token function">docker</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> bash-completion
+<span class="token builtin class-name">source</span> /usr/share/bash-completion/bash_completion
+<span class="token builtin class-name">source</span> /usr/share/bash-completion/completions/docker</code></pre>
+<h2 id="3-2-Docker-Compose"><a href="#3-2-Docker-Compose" class="headerlink" title="3.2 Docker Compose"></a>3.2 Docker Compose</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-SL</span> https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 <span class="token parameter variable">-o</span> /usr/local/bin/docker-compose
+<span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/bin/docker-compose /usr/bin/docker-compose
+<span class="token function">docker-compose</span> <span class="token parameter variable">--version</span></code></pre>
+
+<h2 id="3-3-安装-MySQL-5-7"><a href="#3-3-安装-MySQL-5-7" class="headerlink" title="3.3 安装 MySQL 5.7"></a>3.3 安装 MySQL 5.7</h2><p>安装</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">wget</span>
+<span class="token function">wget</span> https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar 
+<span class="token function">tar</span> <span class="token parameter variable">-xvf</span> mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar <span class="token punctuation">\</span>
+yum <span class="token function">install</span> <span class="token parameter variable">-y</span> numactl libaio net-tools perl <span class="token punctuation">\</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> mysql-community-common-5.7.27-1.el7.x86_64.rpm <span class="token punctuation">\</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> mysql-community-libs-5.7.27-1.el7.x86_64.rpm <span class="token punctuation">\</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> mysql-community-client-5.7.27-1.el7.x86_64.rpm <span class="token punctuation">\</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> mysql-community-server-5.7.27-1.el7.x86_64.rpm <span class="token punctuation">\</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> mysql-community-libs-compat-5.7.27-1.el7.x86_64.rpm <span class="token punctuation">\</span>
+yum clean all <span class="token operator">&amp;&amp;</span> <span class="token function">rm</span> <span class="token parameter variable">-rf</span> mysql* <span class="token punctuation">\</span>
+<span class="token function">rpm</span> -qa<span class="token operator">|</span><span class="token function">grep</span> mysql </code></pre>
+<p>配置文件</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> /etc/my.cnf</code></pre>
+
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
+<span class="token comment"># 默认连接端口</span>
+port <span class="token operator">=</span> <span class="token number">3306</span>
+<span class="token comment"># 用于本地连接的socket套接字</span>
+socket <span class="token operator">=</span> /var/lib/mysql/mysql.sock
+<span class="token comment"># pid文件所在目录</span>
+pid-file <span class="token operator">=</span> /var/run/mysqld/mysqld.pid
+<span class="token comment"># 数据文件存放的目录</span>
+datadir <span class="token operator">=</span> /var/lib/mysql
+<span class="token comment"># MySQL存放临时文件的目录</span>
+tmpdir <span class="token operator">=</span> /tmp
+<span class="token comment"># 错误日志配置文件</span>
+log-error <span class="token operator">=</span> /var/log/mysqld.log
+<span class="token comment"># 服务端默认编码（数据库级别）</span>
+character_set_server <span class="token operator">=</span> utf8
+<span class="token comment"># 服务端默认的比对规则，排序规则</span>
+collation_server <span class="token operator">=</span> utf8_general_ci
+<span class="token comment"># 性能优化的引擎，默认关闭</span>
+performance_schema <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token comment"># 是否支持符号链接，即数据库或表可以存储在my.cnf中指定datadir之外的分区或目录，为0不开启</span>
+symbolic-links <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token comment"># 禁用DNS主机名查找，启用以后用内网地址向mysqlslap请求响应快了一半</span>
+skip_name_resolve <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment"># 最大可连接数</span>
+max_connections <span class="token operator">=</span> <span class="token number">800</span>
+<span class="token comment"># 某台host连接错误次数，超过该次数则被屏蔽</span>
+max_connect_errors <span class="token operator">=</span> <span class="token number">1000</span>
+<span class="token comment"># 数据库事务隔离级别</span>
+transaction_isolation <span class="token operator">=</span> READ-COMMITTED
+<span class="token comment"># join优化内存</span>
+join_buffer_size <span class="token operator">=</span> 128M
+<span class="token comment"># 内部内存临时表的最大值</span>
+tmp_table_size <span class="token operator">=</span> 64M
+<span class="token comment"># 最大接受的数据包大小</span>
+max_allowed_packet <span class="token operator">=</span> 64M
+<span class="token comment"># 服务器关闭交互式连接前等待活动的秒数</span>
+interactive_timeout <span class="token operator">=</span> <span class="token number">1200</span>
+<span class="token comment"># 服务器关闭非交互连接之前等待活动的秒数</span>
+wait_timeout <span class="token operator">=</span> <span class="token number">600</span>
+<span class="token comment"># 读入缓冲区的大小</span>
+read_buffer_size <span class="token operator">=</span> 16M
+<span class="token comment"># 随机读缓冲区大小</span>
+read_rnd_buffer_size <span class="token operator">=</span> 8M
+<span class="token comment"># 在每个connection第一次需要使用这个buffer的时候，一次性分配设置的内存</span>
+sort_buffer_size <span class="token operator">=</span> 8M
+<span class="token comment"># 定义了你MySQL应该支持的sql语法，对数据的校验等等，限制一些所谓的‘不合法’的操作</span>
+<span class="token assign-left variable">sql_mode</span><span class="token operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+<span class="token comment"># 值定义了日志文件的大小</span>
+<span class="token assign-left variable">innodb_log_file_size</span><span class="token operator">=</span>256M</code></pre>
+
+<p>启动，获取密码</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">systemctl start mysqld <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> mysqld
+<span class="token function">grep</span> password /var/log/mysqld.log <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.*\(............\)$/\1/'</span></code></pre>
+<p>授权</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">set</span> password <span class="token keyword">for</span> root@localhost <span class="token operator">=</span> password<span class="token punctuation">(</span><span class="token string">'123456Aa.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+grant all privileges on *.* to <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'123456Aa.'</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span></code></pre>
+<h2 id="3-4-安装-LAMP"><a href="#3-4-安装-LAMP" class="headerlink" title="3.4 安装 LAMP"></a>3.4 安装 LAMP</h2><p><strong>安装apache</strong></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> httpd httpd-devel <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl start httpd <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> httpd <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl status httpd </code></pre>
+
+<p><strong>安装mariadb</strong></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> mariadb mariadb-server mariadb-libs mariadb-devel <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl start mariadb <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> mariadb <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl status mariadb</code></pre>
+<p>初始化mariadb</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">mysql_secure_installation</code></pre>
+<p><strong>安装php</strong></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> php php-mysql php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap <span class="token function">curl</span> curl-devel php-bcmath <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl restart httpd</code></pre>
+
+
+<p>测试文件</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">'&lt;?php \n phpinfo(); \n?>'</span> <span class="token operator">></span> /var/www/html/info.php</code></pre>
+<h2 id="3-5-安装-Node-js-环境"><a href="#3-5-安装-Node-js-环境" class="headerlink" title="3.5 安装 Node.js 环境"></a>3.5 安装 Node.js 环境</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">wget</span> <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> <span class="token parameter variable">-xvf</span> node-v10.16.3-linux-x64.tar.xz <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">mv</span> node-v10.16.3-linux-x64 <span class="token function">node</span> 
+<span class="token operator">&amp;&amp;</span> <span class="token function">mv</span> <span class="token function">node</span> /opt
+<span class="token comment"># 配置环境变量</span>
+<span class="token function">vim</span> ~/.bashrc
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_HOME</span><span class="token operator">=</span>/opt/node
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$NODE_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+<span class="token comment"># 刷新生效</span>
+<span class="token builtin class-name">source</span> ~/.bashrc</code></pre>
+<h2 id="3-6-Nginx"><a href="#3-6-Nginx" class="headerlink" title="3.6 Nginx"></a>3.6 Nginx</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">rpm</span> <span class="token parameter variable">-Uvh</span> http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> yum <span class="token function">install</span> <span class="token parameter variable">-y</span> nginx <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl start nginx.service <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> nginx.service</code></pre>
+<p>nginx配置文件语法高亮</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> http://www.vim.org/scripts/download_script.php?src_id<span class="token operator">=</span><span class="token number">14376</span> <span class="token parameter variable">-O</span> nginx.vim
+<span class="token function">cp</span> nginx.vim /usr/share/vim/vim74/syntax
+<span class="token builtin class-name">echo</span> <span class="token string">'au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &amp;ft == '</span>' <span class="token operator">|</span> setfiletype nginx <span class="token operator">|</span> endif ' <span class="token operator">>></span> /usr/share/vim/vim74/filetypr.vim</code></pre>
+
+<h2 id="3-7-Redis"><a href="#3-7-Redis" class="headerlink" title="3.7 Redis"></a>3.7 Redis</h2><pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> epel-release <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> yum <span class="token function">install</span> <span class="token parameter variable">-y</span> redis <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl start redis <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> redis</code></pre>
+<p>编译安装</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> <span class="token parameter variable">-y</span> <span class="token function">wget</span> gcc <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> https://download.redis.io/releases/redis-5.0.14.tar.gz <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">tar</span> <span class="token parameter variable">-zxvf</span> redis-5.0.14.tar.gz <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> redis-5.0.14 <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token assign-left variable">PREFIX</span><span class="token operator">=</span>/opt/redis <span class="token function">install</span> <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> redis.conf /opt/redis <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token string">'PATH=$PATH:/opt/redis/bin'</span> <span class="token operator">>></span> ~/.bashrc <span class="token punctuation">\</span>
+<span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">source</span> ~/.bashrc </code></pre>
+
+<p>修改 &#x2F;etc&#x2F;redis.conf （非必须）</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">将bind <span class="token number">127.0</span>.0.1 改成 <span class="token builtin class-name">bind</span> <span class="token number">0.0</span>.0.0
+protected-mode <span class="token function">yes</span> 改成 no</code></pre>
+<p>system脚本</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /usr/lib/systemd/system/redis.service</code></pre>
+
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Redis persistent key-value database
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network.target
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target
+<span class="token assign-left variable">Wants</span><span class="token operator">=</span>network-online.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">PIDFile</span><span class="token operator">=</span>/opt/redis/redis.pid
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/opt/redis/bin/redis-server /opt/redis/redis.conf <span class="token parameter variable">--supervised</span> systemd
+<span class="token assign-left variable">ExecReload</span><span class="token operator">=</span>/bin/kill <span class="token parameter variable">-s</span> HUP <span class="token variable">$MAINPID</span>
+<span class="token assign-left variable">ExecStop</span><span class="token operator">=</span>/bin/kill <span class="token parameter variable">-s</span> QUIT <span class="token variable">$MAINPID</span>
+<span class="token assign-left variable">LimitNOFILE</span><span class="token operator">=</span><span class="token number">655360</span>
+<span class="token assign-left variable">PrivateTmp</span><span class="token operator">=</span>true
+<span class="token assign-left variable">Type</span><span class="token operator">=</span>notify
+<span class="token assign-left variable">User</span><span class="token operator">=</span>root
+<span class="token assign-left variable">Group</span><span class="token operator">=</span>root
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target</code></pre>
+<h2 id="3-8-编译安装-php5-6"><a href="#3-8-编译安装-php5-6" class="headerlink" title="3.8 编译安装 php5.6"></a>3.8 编译安装 php5.6</h2><p>参考链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/mike666/p/13958284.html">https://www.cnblogs.com/mike666/p/13958284.html</a></p>
+<p>安装目录：&#x2F;data&#x2F;php_9000</p>
+<p>安装基本工具</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> libxml2 libxml2-devel openssl openssl-devel <span class="token function">bzip2</span> bzip2-devel libcurl libcurl-devel libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel gmp gmp-devel libmcrypt libmcrypt-devel readline readline-devel libxslt libxslt-devel <span class="token parameter variable">-y</span></code></pre>
+<p>下载安装包</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://www.php.net/distributions/php-5.6.40.tar.gz</code></pre>
+<p>编译安装</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">./configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/data/php_9000 --with-config-file-path<span class="token operator">=</span>/etc --enable-fpm --enable-inline-optimization --disable-debug --disable-rpath --enable-shared --enable-soap --with-libxml-dir --with-xmlrpc --with-openssl --with-mcrypt --with-mhash --with-pcre-regex --with-sqlite3 --with-zlib --enable-bcmath --with-iconv --with-bz2 --enable-calendar --with-curl --with-cdb --enable-dom --enable-exif --enable-fileinfo --enable-filter --with-pcre-dir --enable-ftp --with-gd --with-openssl-dir --with-jpeg-dir --with-png-dir --with-zlib-dir --with-freetype-dir --enable-gd-native-ttf --enable-gd-jis-conv --with-gettext --with-gmp --with-mhash --enable-json --enable-mbstring --enable-mbregex --enable-mbregex-backtrack --with-libmbfl --with-onig --enable-pdo --with-mysqli<span class="token operator">=</span>mysqlnd --with-pdo-mysql<span class="token operator">=</span>mysqlnd --with-zlib-dir --with-pdo-sqlite --with-readline --enable-session --enable-shmop --enable-simplexml --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --enable-wddx --with-libxml-dir --with-xsl --enable-zip --enable-mysqlnd-compression-support --with-fpm-group<span class="token operator">=</span>www --with-fpm-user<span class="token operator">=</span>www --enable-pcntl --with-mysql</code></pre>
+
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+
+<p>php.ini 配置文件</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> php.ini-production /etc/php.ini
+<span class="token comment"># 修改配置项</span>
+post_max_size <span class="token operator">=</span> 64M
+upload_max_filesize <span class="token operator">=</span> 64M
+date.timezone <span class="token operator">=</span> PRC
+<span class="token assign-left variable">cgi.fix_pathinfo</span><span class="token operator">=</span><span class="token number">1</span>
+max_execution_time <span class="token operator">=</span> <span class="token number">300</span></code></pre>
+<p>php-fpm 配置文件</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /data/php_9000/etc/
+<span class="token function">cp</span> php-fpm.conf.default php-fpm.conf
+<span class="token comment"># 修改配置项</span>
+<span class="token assign-left variable">user</span><span class="token operator">=</span>www
+<span class="token assign-left variable">group</span><span class="token operator">=</span>www
+<span class="token comment"># 追加以下内容，PHP进程数的设置</span>
+pm.max_children <span class="token operator">=</span> <span class="token number">100</span>
+pm.start_servers <span class="token operator">=</span> <span class="token number">30</span>
+pm.min_spare_servers <span class="token operator">=</span> <span class="token number">20</span>
+pm.max_spare_servers <span class="token operator">=</span> <span class="token number">100</span>
+pm.max_requests <span class="token operator">=</span> <span class="token number">500</span></code></pre>
+
+
+<p>启动文件</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+<span class="token function">chmod</span> +x /etc/init.d/php-fpm</code></pre>
+
+<h2 id="3-9-JDK-环境配置"><a href="#3-9-JDK-环境配置" class="headerlink" title="3.9 JDK 环境配置"></a>3.9 JDK 环境配置</h2><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/root/jdk1.8		<span class="token comment">#jdk文件目录</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/c575dcd3ea60/" rel="prev" title="Windows 挂载 OSS 存储">
+                  <i class="fa fa-chevron-left"></i> Windows 挂载 OSS 存储
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/9d7397c37e98/" rel="next" title="Hexo 搭配 Github Page 搭建个人博客">
+                  Hexo 搭配 Github Page 搭建个人博客 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘李</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">19 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="100" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
