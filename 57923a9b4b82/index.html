@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://blog.liuli.host/categories/%E6%9D%82%E9%A1%B9/">
+<link rel="canonical" href="https://blog.liuli.host/57923a9b4b82/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/杂项/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/57923a9b4b82/","path":"57923a9b4b82/","title":"CentOS 7 内核升级"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: 杂项 | MaxWell's Blog</title>
+<title>CentOS 7 内核升级 | MaxWell's Blog</title>
   
 
 
@@ -163,51 +163,172 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">杂项
-          <small>分类</small>
+ 
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/57923a9b4b82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="刘李">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MaxWell's Blog">
+      <meta itemprop="description" content="运维 / 容器 / 云原生 / 云服务">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CentOS 7 内核升级 | MaxWell's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CentOS 7 内核升级
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2023-02-22 17:00:17 / 修改时间：17:04:54" itemprop="dateCreated datePublished" datetime="2023-02-22T17:00:17+08:00">2023-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>257</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>CentOS 7 系统默认内核版本很低，由于现在很多软件特性需要更高版本的内核才能运行，所以将内核升级步骤记录一下。</p>
+<!--- more -->
+
+
+<p>查看当前系统内核版本</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@master01 ~<span class="token punctuation">]</span><span class="token comment"># uname -r</span>
+<span class="token number">3.10</span>.0-1160.el7.x86_64</code></pre>
+
+<p>升级到最新稳定版本</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 导入 ELRepo 仓库的公共密钥</span>
+<span class="token function">rpm</span> <span class="token parameter variable">--import</span> https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+<span class="token comment"># 安装 ELRepo 仓库的 yum 源</span>
+<span class="token function">rpm</span> <span class="token parameter variable">-Uvh</span> https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+<span class="token comment"># kernel-ml 中的 ml 是英文【mainline stable】的缩写，是最新的稳定主线版本。</span>
+<span class="token comment"># kernel-lt 中的 lt 是英文【long term support】的缩写，是长期支持版本。</span>
+yum <span class="token parameter variable">--enablerepo</span><span class="token operator">=</span>elrepo-kernel <span class="token function">install</span> kernel-ml</code></pre>
+
+<p>查看系统启动 grub2 中配置的内核</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">awk</span> -F<span class="token punctuation">\</span>' <span class="token string">'$1=="menuentry " &#123;print i++ " : " $2&#125;'</span> /etc/grub2.cfg
+<span class="token number">0</span> <span class="token builtin class-name">:</span> CentOS Linux <span class="token punctuation">(</span><span class="token number">5.4</span>.185-1.el7.elrepo.x86_64<span class="token punctuation">)</span> <span class="token number">7</span> <span class="token punctuation">(</span>Core<span class="token punctuation">)</span>
+<span class="token number">1</span> <span class="token builtin class-name">:</span> CentOS Linux <span class="token punctuation">(</span><span class="token number">3.10</span>.0-1160.el7.x86_64<span class="token punctuation">)</span> <span class="token number">7</span> <span class="token punctuation">(</span>Core<span class="token punctuation">)</span>
+<span class="token number">2</span> <span class="token builtin class-name">:</span> CentOS Linux <span class="token punctuation">(</span><span class="token number">0</span>-rescue-a42673ea48f7428ea57f90dd97d54ef9<span class="token punctuation">)</span> <span class="token number">7</span> <span class="token punctuation">(</span>Core<span class="token punctuation">)</span>
+<span class="token comment"># 设置默认内核为 0</span>
+grub2-set-default <span class="token number">0</span>
+<span class="token comment"># 重新创建内核配置</span>
+grub2-mkconfig <span class="token parameter variable">-o</span> /boot/grub2/grub.cfg</code></pre>
+
+<p><code>reboot</code>重启后生效</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@master01 ~<span class="token punctuation">]</span><span class="token comment"># uname -r</span>
+<span class="token number">5.18</span>.5-1.el7.elrepo.x86_64</code></pre>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-08-01T16:54:22+08:00"
-              content="2022-08-01">
-          08-01
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="刘李 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="刘李 支付宝">
+        <span>支付宝</span>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/c575dcd3ea60/" itemprop="url">
-            <span itemprop="name">Windows 挂载 OSS 存储</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E5%86%85%E6%A0%B8%E5%8D%87%E7%BA%A7/" rel="tag"><i class="fa fa-tag"></i> 内核升级</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/3a46cef73ec8/" rel="prev" title="V2Ray 科学上网搭建流程">
+                  <i class="fa fa-chevron-left"></i> V2Ray 科学上网搭建流程
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81ODA4Mi8zNDU0NQ=="></div>
 </div>
   </main>
 
