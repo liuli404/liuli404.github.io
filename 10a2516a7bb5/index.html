@@ -24,14 +24,14 @@
 
 
 
-<link rel="canonical" href="https://blog.liuli.host/c575dcd3ea60/">
+<link rel="canonical" href="https://blog.liuli.host/10a2516a7bb5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/c575dcd3ea60/","path":"c575dcd3ea60/","title":"Windows 挂载 OSS 存储"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.liuli.host/10a2516a7bb5/","path":"10a2516a7bb5/","title":"排查 Linux 是否被入侵"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Windows 挂载 OSS 存储 | MaxWell's Blog</title>
+<title>排查 Linux 是否被入侵 | MaxWell's Blog</title>
   
 
 
@@ -131,7 +131,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6"><span class="nav-text">一、下载软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE-Rclone"><span class="nav-text">二、配置 Rclone</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">2.1 配置环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E9%85%8D%E7%BD%AE-OSS"><span class="nav-text">2.2 配置 OSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">2.3 修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E6%8C%82%E8%BD%BD-OSS-%E4%B8%BA%E6%9C%AC%E5%9C%B0%E7%A3%81%E7%9B%98"><span class="nav-text">2.4 挂载 OSS 为本地磁盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98"><span class="nav-text">2.5 设置开机自启动挂载硬盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE-SyncToy%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-text">三、配置 SyncToy（可选）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%96%B0%E5%BB%BA%E5%90%8C%E6%AD%A5%E7%9B%98"><span class="nav-text">3.1 新建同步盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%90%8C%E6%AD%A5%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2 同步方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%AE%BE%E5%AE%9A%E4%BB%BB%E5%8A%A1%E5%90%8D"><span class="nav-text">3.3 设定任务名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E6%89%8B%E5%8A%A8%E5%90%8C%E6%AD%A5"><span class="nav-text">3.4 手动同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E8%87%AA%E5%8A%A8%E5%90%8C%E6%AD%A5"><span class="nav-text">3.5 自动同步</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9C%80%E8%BF%91%E7%9A%84%E7%99%BB%E9%99%86%E4%BA%8B%E4%BB%B6"><span class="nav-text">1、查看最近的登陆事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%99%BB%E5%BD%95%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-text">2、查看当前登录的用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E7%9B%B8%E5%BA%94%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97"><span class="nav-text">3、相应的系统日志</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E4%BD%BF%E7%94%A8-top-%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E8%BF%9B%E7%A8%8B"><span class="nav-text">4、使用 top 命令查看异常进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E6%9F%A5%E7%9C%8B%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6%E6%9C%89%E6%97%A0%E6%96%B0%E5%A2%9E%E7%94%A8%E6%88%B7"><span class="nav-text">5、查看密码文件有无新增用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6%E3%80%81%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E6%9C%89%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E7%9A%84%E4%B8%BB%E6%9C%BA"><span class="nav-text">6、查看是否有免密登录的主机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7%E3%80%81%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4"><span class="nav-text">7、查看历史命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E6%97%B6%E9%97%B4%E7%82%B9%E5%90%8E%E5%88%9B%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-text">8、查看某个时间点后创建的文件</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -176,7 +176,7 @@
  
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/c575dcd3ea60/">
+    <link itemprop="mainEntityOfPage" href="https://blog.liuli.host/10a2516a7bb5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -189,12 +189,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Windows 挂载 OSS 存储 | MaxWell's Blog">
+      <meta itemprop="name" content="排查 Linux 是否被入侵 | MaxWell's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Windows 挂载 OSS 存储
+          排查 Linux 是否被入侵
         </h1>
 
         <div class="post-meta-container">
@@ -205,14 +205,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-08-01 16:54:22" itemprop="dateCreated datePublished" datetime="2022-08-01T16:54:22+08:00">2022-08-01</time>
+      <time title="创建时间：2019-04-04 18:09:12" itemprop="dateCreated datePublished" datetime="2019-04-04T18:09:12+08:00">2019-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 17:04:20" itemprop="dateModified" datetime="2023-02-21T17:04:20+08:00">2023-02-21</time>
+      <time title="修改时间：2023-03-08 21:08:51" itemprop="dateModified" datetime="2023-03-08T21:08:51+08:00">2023-03-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -220,7 +220,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
         </span>
     </span>
 
@@ -238,14 +238,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>745</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -256,91 +256,95 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>最近想要一个网盘，以防止电脑上重要数据丢失，但是百度阿里这种云盘使用起来需要下载他们的客户端，使用起来略微麻烦，最好是类似一块 Windows 硬盘挂载到我的电脑上，打开就能用的那种。终于在网上找到一种方案，将对象存储挂载至电脑上，并且对象存储价格低廉，遂记录该方案的实现步骤。</p>
+        <p>随着开源产品的越来越盛行，作为一个 Linux 系统运维工程师，能够清晰地鉴别异常机器是否已经被入侵了显得至关重要，个人结合自己的工作经历，整理了几种常见的机器被黑情况供参考。</p>
 <span id="more"></span>
 
-<h1 id="一、下载软件"><a href="#一、下载软件" class="headerlink" title="一、下载软件"></a>一、下载软件</h1><p>Winfsp：<a target="_blank" rel="noopener" href="https://winfsp.dev/rel/">https://winfsp.dev/rel/</a></p>
-<p>Rclone：<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">https://rclone.org/downloads/</a></p>
-<p>SyncToy：<a target="_blank" rel="noopener" href="https://www.majorgeeks.com/files/details/microsoft_synctoy_for_windows_xp.html">https://www.majorgeeks.com/files/details/microsoft_synctoy_for_windows_xp.html</a></p>
-<h1 id="二、配置-Rclone"><a href="#二、配置-Rclone" class="headerlink" title="二、配置 Rclone"></a>二、配置 Rclone</h1><h2 id="2-1-配置环境变量"><a href="#2-1-配置环境变量" class="headerlink" title="2.1 配置环境变量"></a>2.1 配置环境变量</h2><p>1、打开任意文件夹，并在左侧导航目录下找到<strong>此电脑</strong>，单击右键选择<strong>属性 &gt; 高级系统设置 &gt; 环境变量 &gt; 系统变量 &gt; Path</strong>，单击<strong>新建</strong>。</p>
-<p>2、在弹出的窗口中，填写 Rclone 解压后的路径（D:\rclone），单击<strong>确定</strong>。</p>
-<p><img src="/c575dcd3ea60/image-20220801002313643.png" alt="image-20220801002313643"></p>
-<h2 id="2-2-配置-OSS"><a href="#2-2-配置-OSS" class="headerlink" title="2.2 配置 OSS"></a>2.2 配置 OSS</h2><p>1、打开 Windows Powershell，输入<code>rclone --version</code> 命令，按 <strong>Enter</strong>，查看 Rclone 是否成功安装。</p>
-<p><img src="/c575dcd3ea60/image-20220801002400599.png" alt="image-20220801002400599"></p>
-<p>2、确认 Rclone 安装成功后，在 Windows Powershell 中，输入 <code>rclone config</code> 命令，按 <strong>Enter</strong>。</p>
-<p>3、输入 <strong>n</strong> ，按 <strong>Enter</strong>，新建一个 New remote。</p>
-<p>4、输入该磁盘的名称，例如 myoss，按 <strong>Enter</strong></p>
-<p><img src="/c575dcd3ea60/image-20220801002704051.png" alt="image-20220801002704051"></p>
-<p>5、在显示的选项中，选择包含 Alibaba 的选项，即输入<strong>5</strong>，按 <strong>Enter</strong>。</p>
-<p>6、在显示的选项中，选择包含 OSS 的选项，输入<strong>2</strong>，按 <strong>Enter</strong>。</p>
-<p>7、执行到 <code>env_auth&gt;</code> 时，按 Enter。</p>
-<p>8、执行到 <code>access_key_id&gt;</code>时，输入阿里云 OSS 的访问密钥 AccessKey ID，按 <strong>Enter</strong>。</p>
-<p>9、执行到 <code>secret_access_key&gt;</code> 时，输入阿里云 OSS 的访问密钥 AccessKey Secret，按 <strong>Enter</strong>。</p>
-<p>10、选择对应的存储的地域，按 <strong>Enter</strong>。</p>
-<p>11、选择权限类型，根据实际需求选择 private 或者 public-read。输入<strong>3</strong>，按 <strong>Enter</strong>。</p>
-<p>12、在显示的对象存储的存储类型中，您可根据实际需求选择以何种存储类型将文件上传到 OSS。</p>
-<ul>
-<li><p>Default 表示默认</p>
-</li>
-<li><p>Standard storage class 表示标准存储（STANDARD）</p>
-</li>
-<li><p>Infrequent access storage mode 表示低频存储（Standard_IA）</p>
-</li>
-<li><p>Archive storage mode 表示归档存储（ARCHIVE）</p>
-</li>
-</ul>
-<p>13、执行到 <code>Edit advanced config? (y/n)</code> 时，按 <strong>Enter</strong>。</p>
-<p>14、确认信息无误后，按 <strong>Enter</strong>。</p>
-<p>15、输入 <strong>q</strong>，完成配置。</p>
-<h2 id="2-3-修改配置文件"><a href="#2-3-修改配置文件" class="headerlink" title="2.3 修改配置文件"></a>2.3 修改配置文件</h2><p>以上步骤配置完成后，在 <code>C:\Users\用户名\.config\rclone</code> 文件夹下，即可看到一个名称为 rclone.conf 的文件，该文件为 rclone 的配置文件。如果您想要修改 rclone 的配置，可直接对其进行修改。</p>
-<h2 id="2-4-挂载-OSS-为本地磁盘"><a href="#2-4-挂载-OSS-为本地磁盘" class="headerlink" title="2.4 挂载 OSS 为本地磁盘"></a>2.4 挂载 OSS 为本地磁盘</h2><p>如果映射为本地磁盘，则执行命令如下：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">rclone <span class="token function">mount</span> myoss:/ O: --cache-dir D:<span class="token punctuation">\</span>temp --vfs-cache-mode writes --no-check-certificate</code></pre>
 
-<ul>
-<li>myoss：替换为用户自定义的磁盘名称。</li>
-<li>O：替换为您想要挂载后，硬盘的盘符名称即可，请不要与本地的 C、D、E 盘等重复。</li>
-<li>D:\temp 为本地缓存目录，可自行设置。</li>
-</ul>
-<p>当出现提示 “The service rclone has been started” 则说明挂载成功。</p>
-<h2 id="2-5-设置开机自启动挂载硬盘"><a href="#2-5-设置开机自启动挂载硬盘" class="headerlink" title="2.5 设置开机自启动挂载硬盘"></a>2.5 设置开机自启动挂载硬盘</h2><p>由于如上操作在电脑重启后，映射的磁盘将会消失，需要再次手工操作。因此，我们可以设置自启动装置，让服务器每次重启后都自动挂载磁盘。</p>
-<ol>
-<li><p>在 Rclone 安装目录 D:\rclone 下，分别新建 startup_rclone.vbs 和 startup_rclone.bat 文件。</p>
-</li>
-<li><p>在 startup_rclone.bat 中，写入如下挂载命令：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">rclone <span class="token function">mount</span> myoss:/ O: --cache-dir D:<span class="token punctuation">\</span>temp --vfs-cache-mode writes --no-check-certificate <span class="token operator">&amp;</span></code></pre>
-</li>
-<li><p>在 startup_rclone.vbs 中，写入如下代码：</p>
-<pre class="language-vbscript" data-language="vbscript"><code class="language-vbscript">Set Ws &#x3D; CreateObject(&quot;Wscript.Shell&quot;)
-Ws.Run &quot;cmd &#x2F;c D:\rclone\startup_rclone.bat&quot;,0</code></pre>
-</li>
-<li><p>将 startup_rclone.vbs 文件剪切到 <code>%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code> 文件夹下。</p>
-</li>
-<li><p>重启服务器。</p>
-</li>
-</ol>
-<h1 id="三、配置-SyncToy（可选）"><a href="#三、配置-SyncToy（可选）" class="headerlink" title="三、配置 SyncToy（可选）"></a>三、配置 SyncToy（可选）</h1><p>该工具可以实现两个目录中文件同步，但是经测试，文件同步比较耗时，而且使用的对象存储资源较多，费钱。</p>
-<h2 id="3-1-新建同步盘"><a href="#3-1-新建同步盘" class="headerlink" title="3.1 新建同步盘"></a>3.1 新建同步盘</h2><p>左边本地盘、右边 OSS 盘</p>
-<p><img src="/c575dcd3ea60/image-20220801145215001.png" alt="image-20220801145215001"></p>
-<h2 id="3-2-同步方式"><a href="#3-2-同步方式" class="headerlink" title="3.2 同步方式"></a>3.2 同步方式</h2><p>选择 echo，左边操作同步到右边</p>
-<p><img src="/c575dcd3ea60/image-20220801145248669.png" alt="image-20220801145248669"></p>
-<h2 id="3-3-设定任务名"><a href="#3-3-设定任务名" class="headerlink" title="3.3 设定任务名"></a>3.3 设定任务名</h2><p><img src="/c575dcd3ea60/image-20220801145343654.png" alt="image-20220801145343654"></p>
-<h2 id="3-4-手动同步"><a href="#3-4-手动同步" class="headerlink" title="3.4 手动同步"></a>3.4 手动同步</h2><p>点击 run 手动同步两个盘</p>
-<p><img src="/c575dcd3ea60/image-20220801145410013.png" alt="image-20220801145410013"></p>
-<h2 id="3-5-自动同步"><a href="#3-5-自动同步" class="headerlink" title="3.5 自动同步"></a>3.5 自动同步</h2><p>通过定时任务，自动执行同步任务</p>
-<p>任务栏搜索 “任务计划程序”，点击”创建基本任务”</p>
-<p><img src="/c575dcd3ea60/image-20220801145532471.png" alt="image-20220801145532471"></p>
-<p>设置名称</p>
-<p><img src="/c575dcd3ea60/image-20220801145704883.png" alt="image-20220801145704883"></p>
-<p>触发器</p>
-<p><img src="/c575dcd3ea60/image-20220801145718632.png" alt="image-20220801145718632"></p>
-<p>时间</p>
-<p><img src="/c575dcd3ea60/image-20220801145740933.png" alt="image-20220801145740933"></p>
-<p>操作</p>
-<p><img src="/c575dcd3ea60/image-20220801145749898.png" alt="image-20220801145749898"></p>
-<p>程序位置</p>
-<p><img src="/c575dcd3ea60/image-20220801164020060.png" alt="image-20220801164020060"></p>
-<p>完成</p>
-<p><img src="/c575dcd3ea60/image-20220801145840800.png" alt="image-20220801145840800"></p>
+
+<h1 id="1、查看最近的登陆事件"><a href="#1、查看最近的登陆事件" class="headerlink" title="1、查看最近的登陆事件"></a>1、查看最近的登陆事件</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@ecs-d886 ~<span class="token punctuation">]</span><span class="token comment"># last</span>
+root     pts/0        <span class="token number">223.214</span>.252.40   Wed Mar  <span class="token number">8</span> <span class="token number">18</span>:08   still logged <span class="token keyword">in</span>
+root     pts/0        <span class="token number">49.65</span>.65.53      Wed Feb <span class="token number">22</span> <span class="token number">17</span>:01 - <span class="token number">18</span>:05  <span class="token punctuation">(</span>01:04<span class="token punctuation">)</span>
+root     pts/1        <span class="token number">49.65</span>.65.53      Wed Feb <span class="token number">15</span> <span class="token number">20</span>:12 - <span class="token number">20</span>:21  <span class="token punctuation">(</span>00:09<span class="token punctuation">)</span>
+root     pts/0        <span class="token number">49.65</span>.65.53      Wed Feb <span class="token number">15</span> <span class="token number">20</span>:05 - <span class="token number">20</span>:21  <span class="token punctuation">(</span>00:16<span class="token punctuation">)</span>
+root     pts/0        <span class="token number">221.231</span>.165.167  Sat Feb <span class="token number">11</span> <span class="token number">22</span>:29 - 00:50  <span class="token punctuation">(</span>02:20<span class="token punctuation">)</span>
+root     pts/0        <span class="token number">221.231</span>.165.167  Sat Feb <span class="token number">11</span> <span class="token number">18</span>:25 - <span class="token number">21</span>:23  <span class="token punctuation">(</span>02:57<span class="token punctuation">)</span>
+root     pts/0        <span class="token number">221.231</span>.165.167  Sat Feb <span class="token number">11</span> <span class="token number">14</span>:47 - <span class="token number">17</span>:41  <span class="token punctuation">(</span>02:54<span class="token punctuation">)</span>
+<span class="token function">reboot</span>   system boot  <span class="token number">4.18</span>.0-348.7.1.e Sat Feb <span class="token number">11</span> <span class="token number">14</span>:46   still running
+
+wtmp begins Fri Jul  <span class="token number">8</span> <span class="token number">11</span>:49:25 <span class="token number">2022</span>
+<span class="token punctuation">[</span>root@ecs-d886 ~<span class="token punctuation">]</span><span class="token comment"># lastlog </span>
+Username         Port     From             Latest
+root             pts/0    <span class="token number">223.214</span>.252.40   Wed Mar  <span class="token number">8</span> <span class="token number">18</span>:08:49 +0800 <span class="token number">2023</span>
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+<span class="token function">sync</span>                                       **Never logged in**
+<span class="token function">shutdown</span>                                   **Never logged in**
+<span class="token function">halt</span>                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+<span class="token function">ftp</span>                                        **Never logged in**
+nobody                                     **Never logged in**
+dbus                                       **Never logged in**
+systemd-coredump                           **Never logged in**
+systemd-resolve                            **Never logged in**
+tss                                        **Never logged in**
+polkitd                                    **Never logged in**
+unbound                                    **Never logged in**
+postfix                                    **Never logged in**
+sssd                                       **Never logged in**
+sshd                                       **Never logged in**
+chrony                                     **Never logged in**
+rngd                                       **Never logged in**
+tcpdump                                    **Never logged in**</code></pre>
+
+<h1 id="2、查看当前登录的用户"><a href="#2、查看当前登录的用户" class="headerlink" title="2、查看当前登录的用户"></a>2、查看当前登录的用户</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@ecs-d886 ~<span class="token punctuation">]</span><span class="token comment"># w</span>
+ <span class="token number">18</span>:20:07 up <span class="token number">25</span> days,  <span class="token number">3</span>:33,  <span class="token number">1</span> user,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
+<span class="token environment constant">USER</span>     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/0    <span class="token number">223.214</span>.252.40   <span class="token number">18</span>:08    <span class="token number">0</span>.00s  <span class="token number">0</span>.01s  <span class="token number">0</span>.00s w</code></pre>
+
+<h1 id="3、相应的系统日志"><a href="#3、相应的系统日志" class="headerlink" title="3、相应的系统日志"></a>3、相应的系统日志</h1><p>查看 secure 日志，查看登录日志</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@ecs-d886 ~<span class="token punctuation">]</span><span class="token comment"># cat /var/log/secure | grep -i 'accepted password'</span>
+Mar  <span class="token number">8</span> <span class="token number">18</span>:08:49 ecs-d886 sshd<span class="token punctuation">[</span><span class="token number">86991</span><span class="token punctuation">]</span>: Accepted password <span class="token keyword">for</span> root from <span class="token number">223.214</span>.252.40 port <span class="token number">10911</span> ssh2</code></pre>
+
+<h1 id="4、使用-top-命令查看异常进程"><a href="#4、使用-top-命令查看异常进程" class="headerlink" title="4、使用 top 命令查看异常进程"></a>4、使用 top 命令查看异常进程</h1><p>top命令，查看到异常进程后，使用命令 <code>ll /proc/$&#123;pid&#125;/exe</code>，查看具体的应用程序</p>
+<h1 id="5、查看密码文件有无新增用户"><a href="#5、查看密码文件有无新增用户" class="headerlink" title="5、查看密码文件有无新增用户"></a>5、查看密码文件有无新增用户</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@ecs-d886 ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/passwd</span>
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+polkitd:x:998:996:User <span class="token keyword">for</span> polkitd:/:/sbin/nologin
+unbound:x:997:995:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+sssd:x:996:993:User <span class="token keyword">for</span> sssd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+chrony:x:995:992::/var/lib/chrony:/sbin/nologin
+rngd:x:994:991:Random Number Generator Daemon:/var/lib/rngd:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin</code></pre>
+
+<h1 id="6、查看是否有免密登录的主机"><a href="#6、查看是否有免密登录的主机" class="headerlink" title="6、查看是否有免密登录的主机"></a>6、查看是否有免密登录的主机</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /root/.ssh/authorized_keys</code></pre>
+
+<h1 id="7、查看历史命令"><a href="#7、查看历史命令" class="headerlink" title="7、查看历史命令"></a>7、查看历史命令</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /root/.bash_history </code></pre>
+
+<h1 id="8、查看某个时间点后创建的文件"><a href="#8、查看某个时间点后创建的文件" class="headerlink" title="8、查看某个时间点后创建的文件"></a>8、查看某个时间点后创建的文件</h1><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> / <span class="token parameter variable">-newermt</span> <span class="token string">'2020-03-01 16:34:00'</span></code></pre>
+
+
+
 
     </div>
 
@@ -368,21 +372,17 @@ Ws.Run &quot;cmd &#x2F;c D:\rclone\startup_rclone.bat&quot;,0</code></pre>
 </div>
 
           <div class="post-tags">
-              <a href="/tags/OSS/" rel="tag"><i class="fa fa-tag"></i> OSS</a>
-              <a href="/tags/Rclone/" rel="tag"><i class="fa fa-tag"></i> Rclone</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/d4d8941de2a5/" rel="prev" title="Linux 获取文件的创建时间">
-                  <i class="fa fa-chevron-left"></i> Linux 获取文件的创建时间
-                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/611e19b2dbc6/" rel="next" title="常用服务快速安装">
-                  常用服务快速安装 <i class="fa fa-chevron-right"></i>
+                <a href="/d4d8941de2a5/" rel="next" title="Linux 获取文件的创建时间">
+                  Linux 获取文件的创建时间 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
